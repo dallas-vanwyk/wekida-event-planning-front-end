@@ -32,7 +32,7 @@ const SignUpForm = () => {
     } catch (err) {
       setMessage(err.message)
     }
-   
+
   }
   const isFormInvalid = () => {
     return !(firstName && lastName && username && email && password && password === confirmPassword)
@@ -41,8 +41,8 @@ const SignUpForm = () => {
     <main className={styles.container}>
       <section>
 
-          <h1>Sign Up</h1>
-          <p>{message}</p>
+        <h1>Sign Up</h1>
+        <p>{message}</p>
         <form onSubmit={handleSubmit} className={styles.container}>
           <div>
 
@@ -106,7 +106,7 @@ const SignUpForm = () => {
           </div>
           <div>
             <button disabled={isFormInvalid()}>SignUp</button>
-            <button  type='button' onClick={() => navigate('/')} >Cancel</button>
+            <button type='button' onClick={() => navigate('/')} >Cancel</button>
           </div>
         </form>
       </section>

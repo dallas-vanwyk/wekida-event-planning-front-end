@@ -1,13 +1,13 @@
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router"
 
 import { signIn } from "../../services/authService";
 
 import { UserContext } from "../../contexts/UserContext";
 
-const SignInForm = () => {  
+const SignInForm = () => {
   const navigate = useNavigate()
-  const {setUser} = useContext(UserContext)
+  const { setUser } = useContext(UserContext)
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     username: '',
@@ -16,13 +16,13 @@ const SignInForm = () => {
 
   const handleChange = (e) => {
     setMessage('')
-    setFormData({ ...formData, [e.target.name]: e.target.value})
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    try{
+    try {
       const signedInUser = await signIn(formData)
 
       setUser(signedInUser)
@@ -31,7 +31,7 @@ const SignInForm = () => {
       setMessage(err.message)
     }
   }
-  
+
   return (
     <main>
       <h1>Sign In</h1>
@@ -67,7 +67,7 @@ const SignInForm = () => {
         </div>
       </form>
     </main>
-  ) 
+  )
 };
 
 export default SignInForm;

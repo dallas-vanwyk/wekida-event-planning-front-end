@@ -5,7 +5,8 @@ import SignInForm from "./components/SignInForm/SignInForm";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import Landing from "./components/Landing/Landing.jsx";
 import EventList from "./components/EventList/EventList.jsx";
-// import * as eventService from './services/eventService.js'
+import ShowEvent from "./components/Show Event/ShowEvent.jsx";
+import * as eventService from './services/eventService.js'
 import { UserContext } from "./contexts/UserContext.jsx";
 
 import "./App.css";
@@ -13,35 +14,36 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import CreateEvent from "./components/CreateEvent/CreateEvent.jsx";
 
 function App() {
-  //  const [user, setUser] = useState(null);
-   const {user} = useContext(UserContext)
+  const [events, setEvents] = useState([]);
+  const { user } = useContext(UserContext)
 
-  //  useEffect(() => {
-  //   const fetchAllEvents = async () => {
-  //     const eventsData = await eventService.index()
-  //     console.log('eventsData:', eventsData)
-  //   }
-  //   if (user) fetchAllEvents()
-  //  }, [user])
+  useEffect(() => {
+    const fetchAllEvents = async () => {
+      const eventsData = await eventService.index()
+      console.log('eventsData:', eventsData)
+    }
+    if (user) fetchAllEvents()
+  }, [])
 
   return (
-      <div className="App">
-        <NavBar />
-        <Routes>
-          <Route path="/" element={user ? <Dashboard /> : <Landing />} />
-          {user ? (
-            <>
+    <div className="App">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={user ? <Dashboard /> : <Landing />} />
+        {user ? (
+          <>
             <Route path='/events' element={<EventList />} />
             <Route path="/events/create" element={<CreateEvent />} />
-            </>
-          ) : (
-            <>
+            <Route path="/events/:eventId" element={<ShowEvent />} />
+          </>
+        ) : (
+          <>
             <Route path="/sign-up" element={<SignUpForm />} />
             <Route path="/sign-in" element={<SignInForm />} />
-            </>
-          )}
-        </Routes>
-      </div>
+          </>
+        )}
+      </Routes>
+    </div>
   );
 }
 

@@ -14,7 +14,7 @@ const CreateEvent = () => {
 
       {/* Category Image Background Section */}
       <div className="h-36 bg-[#E7F6FF] mt-8 flex justify-center items-center rounded-2xl">
-        <span class="material-symbols-outlined text-[#3758F9]">photo</span>
+        <span className="material-symbols-outlined text-[#3758F9]">photo</span>
       </div>
 
       {/* Form Section */}
