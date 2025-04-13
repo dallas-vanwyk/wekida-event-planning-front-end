@@ -1,16 +1,9 @@
-import React, { useContext, useState } from "react";
-import Attendees from "../Attendees/Attendees";
-import { UserContext } from "../../contexts/UserContext";
+import React, { useState } from "react";
+import Attendees from "../AddAttendees/AddAttendees";
+import axios from "axios";
 
-{ /* Set up useState and review it */}
-
-  //  const formatDate = (dateString) => new Date(dateString).toLocaleDateString()
-  //   const formatTime = (dateString) =>
-  //     new Date(dateString).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-
-    
 const initialFormState = {
-  event_title: "",
+  title: "",
   description: "",
   category: "",
   start_date: "",
@@ -24,16 +17,20 @@ const CreateEvent = () => {
   const {user} = useContext(UserContext)
   const [formData, setFormData] = useState(initialFormState);
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
-
   const handleClear = () => {
     setFormData(initialFormState);
+  };
+
+  const handleAddEvent = async () => {
+    console.log("Event Data:", formData);
+
+    try {
+      const apiUrl = import.meta.env.VITE_BACK_END_SERVER_URL;
+      const response = await axios.post(`${apiUrl}/events`, formData);
+      console.log("Event created successfully:", response.data);
+    } catch (error) {
+      console.error("Error creating event:", error);
+    }
   };
 
   return (
@@ -42,8 +39,10 @@ const CreateEvent = () => {
       <div className="flex justify-between">
         <p className="font-bold text-2xl">Create an Event</p>
         <div>
-          <button onClick={handleClear} className="bg-[#D9D9D9] py-2 px-4 rounded mr-4">Clear All Information</button>
-          <button className="bg-[#3758F9] text-white py-2 px-4 rounded">Preview Event Invite</button>
+          <button className="bg-[#D9D9D9] py-2 px-4 rounded mr-4">Clear All Information</button>
+          <button onClick={() => handleAddEvent()} className="bg-[#3758F9] text-white py-2 px-4 rounded">
+            Save & Preview Event
+          </button>
         </div>
       </div>
 
@@ -61,6 +60,8 @@ const CreateEvent = () => {
               Event Title
             </label>
             <input
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
               type="text"
               id="event_title"
               value={formData.event_title}
@@ -78,10 +79,10 @@ const CreateEvent = () => {
                 Start Date
               </label>
               <input
-                type="date"
-                id="start_date"
-                value={formData.start_date}
-                onChange={handleChange}
+                value={formData.startDate}
+                onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+                type="text"
+                id="event-start-date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
               />
@@ -91,10 +92,10 @@ const CreateEvent = () => {
                 End Date
               </label>
               <input
-                type="date"
-                id="end_date"
-                value={formData.end_date}
-                onChange={handleChange}
+                value={formData.endDate}
+                onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                type="text"
+                id="event-end-date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
               />
@@ -108,6 +109,8 @@ const CreateEvent = () => {
               Address
             </label>
             <input
+              value={formData.address}
+              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
               type="text"
               id="location"
               value={formData.location}
@@ -123,11 +126,11 @@ const CreateEvent = () => {
               Category
             </label>
             <select
-             id="category"
-             value={formData.category}
-             onChange={handleChange}
-             className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75">
-              <option value=""  disabled>
+              onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+              id="category"
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
+            >
+              <option value="" selected disabled>
                 Select Category
               </option>
               <option value="weddings">Wedding</option>
@@ -146,8 +149,10 @@ const CreateEvent = () => {
                 Start Time
               </label>
               <input
-                type="time"
-                id="start_date"
+                value={formData.startTime}
+                onChange={(e) => setFormData({ ...formData, startTime: e.target.value })}
+                type="text"
+                id="event-start-time"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="HH:MM AM/PM"
               />
@@ -157,8 +162,10 @@ const CreateEvent = () => {
                 End Time
               </label>
               <input
-                type="time"
-                id="end_date"
+                value={formData.endTime}
+                onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
+                type="text"
+                id="event-end-time"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="HH:MM AM/PM"
               />
@@ -170,8 +177,9 @@ const CreateEvent = () => {
             <label htmlFor="hosted-by" className="block">
               Hosted By
             </label>
-              {user.firstName} {user.lastName}
-            {/* <input
+            <input
+              value={formData.hostedBy}
+              onChange={(e) => setFormData({ ...formData, hostedBy: e.target.value })}
               type="text"
               id="hosted-by"
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
@@ -185,6 +193,8 @@ const CreateEvent = () => {
               Event Description
             </label>
             <textarea
+              value={formData.description}
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               id="description"
               value={formData.description}
               onChange={handleChange}

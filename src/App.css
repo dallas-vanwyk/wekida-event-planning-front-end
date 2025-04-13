@@ -9,3 +9,7 @@
   font-style: normal;
 }
 */
+
+.background-banner {
+  background-image: url("./assets/images/babyshowerbg.jpg");
+}

@@ -39,21 +39,53 @@ const Dashboard = () => {
           <p>Your event calendar is a blank canvas.</p>
         </div>
       ) : (
-        <div className="border-l-[#3758F9] border-l-[4px] px-4 mt-12">
-          <h2 className="font-bold text-xl">Upcoming Events</h2>
-          <p>Click on individual events for more information.</p>
-          <ul className="space-y-4">
-            {events.map((event) => (
-              <li key={event._id} className="p-4 bg-white rounded shadow-md">
-                <h3 className="font-semibold text-lg">{event.event_title}</h3>
-                <Link to={`/events/${event._id}`} >
-                  <p>{event.description}</p>
-                  <p className="text-sm text-gray-500">{new Date(event.start_date).toLocaleDateString()}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <>
+          <div className="border-l-[#3758F9] border-l-[4px] px-4 mt-12">
+            <h2 className="font-bold text-xl">Upcoming Events</h2>
+            <p>Click on individual events for more information.</p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
+            <div className="shadow-md hover:shadow-lg rounded-md p-4">
+              <p className="font-bold text-xl">Baby Shower</p>
+              <p className="text-gray-700 mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
+                sed dolore nam ad adipisci sapiente.
+              </p>
+              <Link to="/" className="mt-8 block">
+                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+              </Link>
+              <Link to="/" className="text-gray-500 mt-6 block">
+                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+              </Link>
+            </div>
+            <div className="shadow-md hover:shadow-lg rounded-md p-4">
+              <p className="font-bold text-xl">Baby Shower</p>
+              <p className="text-gray-700 mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
+                sed dolore nam ad adipisci sapiente.
+              </p>
+              <Link to="/" className="mt-8 block">
+                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+              </Link>
+              <Link to="/" className="text-gray-500 mt-6 block">
+                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+              </Link>
+            </div>
+            <div className="shadow-md hover:shadow-lg rounded-md p-4">
+              <p className="font-bold text-xl">Baby Shower</p>
+              <p className="text-gray-700 mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
+                sed dolore nam ad adipisci sapiente.
+              </p>
+              <Link to="/" className="mt-8 block">
+                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+              </Link>
+              <Link to="/" className="text-gray-500 mt-6 block">
+                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+              </Link>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
