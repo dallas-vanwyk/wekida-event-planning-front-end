@@ -111,4 +111,9 @@ Photos:
 
 Iconography:
 
-- https://fonts.google.com/icons?selected=Material+Symbols+Outlined:photo:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=image&icon.size=24&icon.color=%235f6368
+- https://cdnjs.com/libraries/font-awesome
+- https://fontawesome.com/icons/image?f=classic&s=solid
+- https://fontawesome.com/icons/trash?f=classic&s=solid
+- https://fontawesome.com/icons/pencil?f=classic&s=solid
+- https://fontawesome.com/icons/xmark?f=classic&s=solid
+- https://fontawesome.com/icons/floppy-disk?f=classic&s=solid

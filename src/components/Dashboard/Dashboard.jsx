@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 
 const Dashboard = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([1]);
 
   return (
     <div className="mx-8 mt-8">
@@ -23,10 +23,23 @@ const Dashboard = () => {
           <p>Your event calendar is a blank canvas.</p>
         </div>
       ) : (
-        <div className="border-l-[#3758F9] border-l-[4px] px-4 mt-12">
-          <h2 className="font-bold text-xl">Upcoming Events</h2>
-          <p>Click on individual events for more information.</p>
-        </div>
+        <>
+          <div className="border-l-[#3758F9] border-l-[4px] px-4 mt-12">
+            <h2 className="font-bold text-xl">Upcoming Events</h2>
+            <p>Click on individual events for more information.</p>
+          </div>
+          <div className="grid grid-cols-3 gap-4 mt-8">
+            <div className="border border-gray-600 rounded-md p-4">
+              <p className="font-bold text-xl">Baby Shower</p>
+            </div>
+            <div className="border border-gray-600 rounded-md p-4">
+              <p className="font-bold text-xl">Baby Shower</p>
+            </div>
+            <div className="border border-gray-600 rounded-md p-4">
+              <p className="font-bold text-xl">Baby Shower</p>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
