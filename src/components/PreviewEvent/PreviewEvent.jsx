@@ -1,6 +1,9 @@
-import React from "react";
+import { useState } from "react";
+import AttendeesList from "../AttendeesList/AttendeesList";
 
 const PreviewEvent = () => {
+  const [attendees, setAttendees] = useState(["John Doe", "Jane Smith"]);
+
   return (
     <div className="mx-8 mt-4">
       {/* First Section */}
@@ -82,6 +85,9 @@ const PreviewEvent = () => {
           </div>
         </div>
       </div>
+
+      <hr />
+      <AttendeesList attendees={attendees} />
     </div>
   );
 };

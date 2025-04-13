@@ -28,15 +28,45 @@ const Dashboard = () => {
             <h2 className="font-bold text-xl">Upcoming Events</h2>
             <p>Click on individual events for more information.</p>
           </div>
-          <div className="grid grid-cols-3 gap-4 mt-8">
-            <div className="border border-gray-600 rounded-md p-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
+            <div className="shadow-md hover:shadow-lg rounded-md p-4">
               <p className="font-bold text-xl">Baby Shower</p>
+              <p className="text-gray-700 mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
+                sed dolore nam ad adipisci sapiente.
+              </p>
+              <Link to="/" className="mt-8 block">
+                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+              </Link>
+              <Link to="/" className="text-gray-500 mt-6 block">
+                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+              </Link>
             </div>
-            <div className="border border-gray-600 rounded-md p-4">
+            <div className="shadow-md hover:shadow-lg rounded-md p-4">
               <p className="font-bold text-xl">Baby Shower</p>
+              <p className="text-gray-700 mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
+                sed dolore nam ad adipisci sapiente.
+              </p>
+              <Link to="/" className="mt-8 block">
+                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+              </Link>
+              <Link to="/" className="text-gray-500 mt-6 block">
+                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+              </Link>
             </div>
-            <div className="border border-gray-600 rounded-md p-4">
+            <div className="shadow-md hover:shadow-lg rounded-md p-4">
               <p className="font-bold text-xl">Baby Shower</p>
+              <p className="text-gray-700 mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
+                sed dolore nam ad adipisci sapiente.
+              </p>
+              <Link to="/" className="mt-8 block">
+                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+              </Link>
+              <Link to="/" className="text-gray-500 mt-6 block">
+                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+              </Link>
             </div>
           </div>
         </>

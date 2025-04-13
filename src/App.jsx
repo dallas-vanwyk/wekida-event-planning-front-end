@@ -8,6 +8,7 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import CreateEvent from "./components/CreateEvent/CreateEvent.jsx";
 import PreviewEvent from "./components/PreviewEvent/PreviewEvent.jsx";
+import EventConfirmation from "./components/EventConfirmation/EventConfirmation.jsx";
 
 function App() {
   //  const [user, setUser] = useState(null);
@@ -22,6 +23,7 @@ function App() {
           <Route path="/sign-in" element={<SignInForm />} />
           <Route path="/events/create" element={<CreateEvent />} />
           <Route path="/events/preview" element={<PreviewEvent />} />
+          <Route path="/events/confirmation" element={<EventConfirmation />} />
         </Routes>
       </div>
     </Router>

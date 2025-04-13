@@ -117,3 +117,6 @@ Iconography:
 - https://fontawesome.com/icons/pencil?f=classic&s=solid
 - https://fontawesome.com/icons/xmark?f=classic&s=solid
 - https://fontawesome.com/icons/floppy-disk?f=classic&s=solid
+- https://fontawesome.com/icons/circle-check?f=classic&s=regular
+- https://fontawesome.com/icons/circle-chevron-right?f=classic&s=solid
+- https://fontawesome.com/icons/trash?f=classic&s=regular
