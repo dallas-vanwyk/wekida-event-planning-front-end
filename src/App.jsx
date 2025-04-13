@@ -12,6 +12,7 @@ import { UserContext } from "./contexts/UserContext.jsx";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import CreateEvent from "./components/CreateEvent/CreateEvent.jsx";
+import PreviewEvent from "./components/PreviewEvent/PreviewEvent.jsx";
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -26,6 +27,7 @@ function App() {
   }, [])
 
   return (
+<<<<<<< HEAD
     <div className="App">
       <NavBar />
       <Routes>
@@ -44,6 +46,20 @@ function App() {
         )}
       </Routes>
     </div>
+=======
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/sign-up" element={<SignUpForm />} />
+          <Route path="/sign-in" element={<SignInForm />} />
+          <Route path="/events/create" element={<CreateEvent />} />
+          <Route path="/events/preview" element={<PreviewEvent />} />
+        </Routes>
+      </div>
+    </Router>
+>>>>>>> 0dbe18cb8f81b01f6f515d4644e7395544fea73c
   );
 }
 
