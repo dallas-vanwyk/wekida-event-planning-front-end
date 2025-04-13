@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { show as fetchEvent } from "../../services/eventService";
+import * as eventService from "../../services/eventService";
 
 const ShowEvent = () => {
   const { eventId } = useParams();
@@ -9,7 +9,7 @@ const ShowEvent = () => {
   useEffect(() => {
     const getEvent = async () => {
       try {
-        const data = await fetchEvent(eventId);
+        const data = await eventService.show(eventId);
         setEvent(data);
       } catch (err) {
         console.error("Failed to fetch event:", err);
@@ -24,7 +24,7 @@ const ShowEvent = () => {
 console.log(event)
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold">{event.title}</h1>
+      <h1 className="text-2xl font-bold">{event.event_title}</h1>
       <p className="text-gray-600">{event.category}</p>
       <p className="text-gray-600">{event.description}</p>
       {event.attendees.map((attendee, idx) => (
@@ -36,7 +36,7 @@ console.log(event)
   </li>
 ))}
       <p className="text-gray-600">{event.location}</p>
-      <p className="text-sm text-gray-500">{new Date(event.start_date).toLocaleString()}</p>
+      <p className="text-sm text-gray-500">{new Date(event.start_date).toLocaleDateString()}</p>
     </div>
   );
 };

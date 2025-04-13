@@ -17,7 +17,7 @@ const NavBar = () => {
       {user ? (
       <ul className="ml-8 flex justify-between items-center">
           <li className="flex items-center">
-            <span className="text-[#3758F9] text-2xl font-bold">Welcome to Wekida, {user.username}</span>
+            <span className="text-[#3758F9] text-2xl font-bold">Welcome to Wekida, {user.firstName}</span>
           </li>
           <li className="mx-4 ml-12">
             <Link to="/">Home</Link>

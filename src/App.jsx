@@ -15,7 +15,7 @@ import CreateEvent from "./components/CreateEvent/CreateEvent.jsx";
 import PreviewEvent from "./components/PreviewEvent/PreviewEvent.jsx";
 
 function App() {
-  const [events, setEvents] = useState([]);
+  // const [events, setEvents] = useState([]);
   const { user } = useContext(UserContext)
 
   useEffect(() => {
@@ -27,39 +27,20 @@ function App() {
   }, [])
 
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={user ? <Dashboard /> : <Landing />} />
-        {user ? (
-          <>
-            <Route path='/events' element={<EventList />} />
-            <Route path="/events/create" element={<CreateEvent />} />
-            <Route path="/events/:eventId" element={<ShowEvent />} />
-          </>
-        ) : (
-          <>
-            <Route path="/sign-up" element={<SignUpForm />} />
-            <Route path="/sign-in" element={<SignInForm />} />
-          </>
-        )}
-      </Routes>
-    </div>
-=======
-    <Router>
+    // <Router>
       <div className="App">
         <NavBar />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/sign-up" element={<SignUpForm />} />
           <Route path="/sign-in" element={<SignInForm />} />
+          <Route path="/events" element={<EventList />} />
+          <Route path="/events/:eventId" element={<ShowEvent />} />
           <Route path="/events/create" element={<CreateEvent />} />
           <Route path="/events/preview" element={<PreviewEvent />} />
         </Routes>
       </div>
-    </Router>
->>>>>>> 0dbe18cb8f81b01f6f515d4644e7395544fea73c
+    // </Router>
   );
 }
 

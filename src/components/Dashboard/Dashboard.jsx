@@ -1,19 +1,29 @@
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../contexts/UserContext";
-import * as userService from '../../services/userService'
-import { index as fetchEvents } from '../../services/eventService'
+import * as eventService from '../../services/eventService'
 // import { useState } from "react";
 import { Link } from "react-router";
-// >>>>>>> dc6a2053f797fceb450d3ff18fbc9f9a1c5272fa
 
 const Dashboard = () => {
-  
+  const { user } = useContext(UserContext)
   const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchAllEvents = async () => {
+      const eventsData = await eventService.index()
+      setEvents(eventsData)
+    }
+    if (user) fetchAllEvents()
+
+  }, [user])
+
+
+
 
   return (
     <div className="mx-8 mt-8">
       <div className="bg-[#E7F6FF] p-6 rounded-2xl">
-        <h2 className="text-[#3758F9] text-2xl font-bold"> Hello {user.firstName}, Welcome to Your Ultimate Event Planning Companion</h2>
+        <h2 className="text-[#3758F9] text-2xl font-bold"> Hello {user ? user.firstName : ''} Welcome to Your Ultimate Event Planning Companion</h2>
         <p className="font-bold mt-8">Create and Manage</p>
         <p className="mt-4 mb-8">
           Whether you're organizing a small gathering or a grand celebration, Wekida is here to make your planning
@@ -32,6 +42,17 @@ const Dashboard = () => {
         <div className="border-l-[#3758F9] border-l-[4px] px-4 mt-12">
           <h2 className="font-bold text-xl">Upcoming Events</h2>
           <p>Click on individual events for more information.</p>
+          <ul className="space-y-4">
+            {events.map((event) => (
+              <li key={event._id} className="p-4 bg-white rounded shadow-md">
+                <h3 className="font-semibold text-lg">{event.event_title}</h3>
+                <Link to={`/events/${event._id}`} >
+                  <p>{event.description}</p>
+                  <p className="text-sm text-gray-500">{new Date(event.start_date).toLocaleDateString()}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

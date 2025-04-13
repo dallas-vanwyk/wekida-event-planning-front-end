@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Attendees from "../Attendees/Attendees";
+import { UserContext } from "../../contexts/UserContext";
 
 { /* Set up useState and review it */}
+
+  //  const formatDate = (dateString) => new Date(dateString).toLocaleDateString()
+  //   const formatTime = (dateString) =>
+  //     new Date(dateString).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+
+    
 const initialFormState = {
-  title: "",
-  startDate: "",
-  endDate: "",
-  startTime: "",
-  endTime: "",
-  category: "",
-  location: "",
-  host: "",
+  event_title: "",
   description: "",
+  category: "",
+  start_date: "",
+  end_date: "",
+  location: "",
+  organizer: "",
+  attendees: []
 };
 
 const CreateEvent = () => {
+  const {user} = useContext(UserContext)
   const [formData, setFormData] = useState(initialFormState);
 
   const handleChange = (e) => {
@@ -35,18 +42,14 @@ const CreateEvent = () => {
       <div className="flex justify-between">
         <p className="font-bold text-2xl">Create an Event</p>
         <div>
-          <button className="bg-[#D9D9D9] py-2 px-4 rounded mr-4">Clear All Information</button>
+          <button onClick={handleClear} className="bg-[#D9D9D9] py-2 px-4 rounded mr-4">Clear All Information</button>
           <button className="bg-[#3758F9] text-white py-2 px-4 rounded">Preview Event Invite</button>
         </div>
       </div>
 
       {/* Banner Image Background */}
       <div className="h-36 bg-[#E7F6FF] mt-8 flex justify-center items-center rounded-2xl">
-<<<<<<< HEAD
-        <span className="material-symbols-outlined text-[#3758F9]">photo</span>
-=======
-        <i class="fa-solid fa-image"></i>
->>>>>>> 0dbe18cb8f81b01f6f515d4644e7395544fea73c
+        <i className="fa-solid fa-image"></i>
       </div>
 
       {/* Form Section */}
@@ -59,7 +62,9 @@ const CreateEvent = () => {
             </label>
             <input
               type="text"
-              id="event-title"
+              id="event_title"
+              value={formData.event_title}
+              onChange={handleChange}
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
               placeholder="Enter event title"
             />
@@ -73,8 +78,10 @@ const CreateEvent = () => {
                 Start Date
               </label>
               <input
-                type="text"
-                id="event-start-date"
+                type="date"
+                id="start_date"
+                value={formData.start_date}
+                onChange={handleChange}
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
               />
@@ -84,8 +91,10 @@ const CreateEvent = () => {
                 End Date
               </label>
               <input
-                type="text"
-                id="event-end-date"
+                type="date"
+                id="end_date"
+                value={formData.end_date}
+                onChange={handleChange}
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
               />
@@ -100,7 +109,9 @@ const CreateEvent = () => {
             </label>
             <input
               type="text"
-              id="address"
+              id="location"
+              value={formData.location}
+              onChange={handleChange}
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
               placeholder="Address"
             />
@@ -111,16 +122,20 @@ const CreateEvent = () => {
             <label htmlFor="category" className="block">
               Category
             </label>
-            <select id="category" className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75">
-              <option value="" selected disabled>
+            <select
+             id="category"
+             value={formData.category}
+             onChange={handleChange}
+             className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75">
+              <option value=""  disabled>
                 Select Category
               </option>
-              <option value="">Wedding</option>
-              <option value="">Baby Shower</option>
-              <option value="">Graduation Party</option>
-              <option value="">Conference</option>
-              <option value="">Arts & Entertainment</option>
-              <option value="">Sports</option>
+              <option value="weddings">Wedding</option>
+              <option value="baby shower">Baby Shower</option>
+              <option value="graduation party">Graduation Party</option>
+              <option value="conference">Conference</option>
+              <option value="arts & entertainment">Arts & Entertainment</option>
+              <option value="sports">Sports</option>
             </select>
           </div>
         </div>
@@ -131,8 +146,8 @@ const CreateEvent = () => {
                 Start Time
               </label>
               <input
-                type="text"
-                id="event-start-time"
+                type="time"
+                id="start_date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="HH:MM AM/PM"
               />
@@ -142,8 +157,8 @@ const CreateEvent = () => {
                 End Time
               </label>
               <input
-                type="text"
-                id="event-end-time"
+                type="time"
+                id="end_date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="HH:MM AM/PM"
               />
@@ -155,12 +170,13 @@ const CreateEvent = () => {
             <label htmlFor="hosted-by" className="block">
               Hosted By
             </label>
-            <input
+              {user.firstName} {user.lastName}
+            {/* <input
               type="text"
               id="hosted-by"
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
               placeholder="Enter organizer's name"
-            />
+            /> */}
           </div>
         </div>
         <div className="mt-4">
@@ -170,6 +186,8 @@ const CreateEvent = () => {
             </label>
             <textarea
               id="description"
+              value={formData.description}
+              onChange={handleChange}
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
               placeholder="Write your event description here..."
             ></textarea>
@@ -179,7 +197,7 @@ const CreateEvent = () => {
 
       {/* Recipients Button */}
       <hr />
-      <Attendees />
+      {/* <Attendees /> */}
     </div>
   );
 };

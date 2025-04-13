@@ -50,7 +50,7 @@ const SignUpForm = () => {
               type="text"
               name="firstName"
               placeholder="First Name"
-              value={formData.firstName}
+              value={firstName}
               onChange={handleChange}
               required
             />
@@ -60,7 +60,7 @@ const SignUpForm = () => {
               type="text"
               name="lastName"
               placeholder="Last Name"
-              value={formData.lastName}
+              value={lastName}
               onChange={handleChange}
             />
           </div>
@@ -69,7 +69,7 @@ const SignUpForm = () => {
               type="text"
               name="username"
               placeholder="Username"
-              value={formData.username}
+              value={username}
               onChange={handleChange}
               required
             />
@@ -79,7 +79,7 @@ const SignUpForm = () => {
               type="email"
               name="email"
               placeholder="Email Address"
-              value={formData.email}
+              value={email}
               onChange={handleChange}
               required
             />
@@ -89,7 +89,7 @@ const SignUpForm = () => {
               type="password"
               name="password"
               placeholder="Password"
-              value={formData.password}
+              value={password}
               onChange={handleChange}
               required
             />
@@ -99,7 +99,7 @@ const SignUpForm = () => {
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
-              value={formData.confirmPassword}
+              value={confirmPassword}
               onChange={handleChange}
               required
             />
