@@ -82,7 +82,7 @@ button {
 
 input:focus {
     outline: none;
-    border: 1px solid #00a0df;
+    border: 1px solid #3758F9;
 }
 
 @media only screen and (max-width: 912px) {
