@@ -2,6 +2,7 @@
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/auth`;
 
+// function is called from Sign In page
 const signUp = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-up`, {
@@ -31,6 +32,7 @@ const signUp = async (formData) => {
   };
 };
 
+// function is called from Sign In page
 const signIn = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-in`, {

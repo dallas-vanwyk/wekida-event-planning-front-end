@@ -23,11 +23,20 @@ const NavBar = () => {
           </li>
         </div>
         <div>
+
+          {/* temporarily added link to sign-in page for testing */}
+          <li className="mx-4">
+            <Link to="/sign-in">
+              Sign In
+            </Link>
+          </li>
+
           <li className="mx-4">
             <Link to="/" onClick={handleSignOut}>
               Sign Out
             </Link>
           </li>
+          
         </div>
       </ul>
     </nav>

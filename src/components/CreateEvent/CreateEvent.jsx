@@ -42,7 +42,9 @@ const CreateEvent = () => {
       <div className="flex justify-between">
         <p className="font-bold text-2xl">Create an Event</p>
         <div>
-          <button className="bg-[#D9D9D9] py-2 px-4 rounded mr-4">Clear All Information</button>
+          <button onClick={() => handleClear()} className="bg-[#D9D9D9] py-2 px-4 rounded mr-4">
+            Clear All Information
+          </button>
           <button onClick={() => handleAddEvent()} className="bg-[#3758F9] text-white py-2 px-4 rounded">
             Save & Preview Event
           </button>
