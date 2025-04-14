@@ -1,3 +1,5 @@
+// src/components/PreviewEvent/PreviewEvent.jsx
+
 import { useState } from "react";
 import AttendeesList from "../AttendeesList/AttendeesList";
 

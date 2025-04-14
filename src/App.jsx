@@ -1,3 +1,5 @@
+// src/App.jsx
+
 import { useState, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
@@ -13,15 +15,15 @@ import PreviewEvent from "./components/PreviewEvent/PreviewEvent.jsx";
 import EventConfirmation from "./components/EventConfirmation/EventConfirmation.jsx";
 
 function App() {
-  const { user } = useContext(UserContext)
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchAllEvents = async () => {
-      const eventsData = await eventService.index()
-      console.log('eventsData:', eventsData)
-    }
-    if (user) fetchAllEvents()
-  }, [])
+      const eventsData = await eventService.index();
+      console.log('eventsData:', eventsData);
+    };
+    if (user) fetchAllEvents();
+  }, []);
 
   return (
     // <Router>
@@ -38,6 +40,6 @@ function App() {
     </div>
     // </Router>
   );
-}
+};
 
 export default App;

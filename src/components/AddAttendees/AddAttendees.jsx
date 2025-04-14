@@ -1,5 +1,9 @@
+// src/components/AddAttendees/AddAttendees.jsx
+
 import { useState } from "react";
 import Attendee from "../Attendee/Attendee";
+
+// this component is used in CreateEvent
 
 const Attendees = () => {
   const [attendees, setAttendees] = useState([]);

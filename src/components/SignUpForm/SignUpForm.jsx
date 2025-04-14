@@ -1,7 +1,9 @@
+// src/components/SignUpForm/SignUpForm.jsx
+
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { signUp } from "../../services/authService";
-import styles from './SignUpForm.module.css'
+import styles from './SignUpForm.module.css';
 import { UserContext } from "../../contexts/UserContext";
 
 const SignUpForm = () => {
@@ -19,8 +21,8 @@ const SignUpForm = () => {
 
   const { firstName, lastName, username, password, email, confirmPassword } = formData;
   const handleChange = (e) => {
-    setMessage('')
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setMessage('');
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
