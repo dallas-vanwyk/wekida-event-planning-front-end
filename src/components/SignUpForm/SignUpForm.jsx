@@ -70,6 +70,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
+            <label htmlFor='username'>Username:</label>
             <input
               type="text"
               name="username"
@@ -80,6 +81,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
+            <label htmlFor='email'>Email:</label>
             <input
               type="email"
               name="email"
@@ -90,7 +92,8 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-            <input
+          <label htmlFor='password'>Password:</label>
+          <input
               type="password"
               name="password"
               placeholder="Password"
@@ -100,7 +103,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-            <input
+          <input
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
