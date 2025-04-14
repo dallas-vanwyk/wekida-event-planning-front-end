@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import SignInForm from "./components/SignInForm/SignInForm";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
+import {UserContext} from './components/contexts/UserContext'
 
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar.jsx";
@@ -11,7 +12,15 @@ import PreviewEvent from "./components/PreviewEvent/PreviewEvent.jsx";
 import EventConfirmation from "./components/EventConfirmation/EventConfirmation.jsx";
 
 function App() {
-  //  const [user, setUser] = useState(null);
+  const { user } = useContext(UserContext)
+
+  useEffect(() => {
+    const fetchAllEvents = async () => {
+      const eventsData = await eventService.index()
+      console.log('eventsData:', eventsData)
+    }
+    if (user) fetchAllEvents()
+  }, [])
 
   return (
     <Router>
