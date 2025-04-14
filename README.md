@@ -1,10 +1,10 @@
-# Wekida Event Planning Application - MERN Stack
+# Wekida Event Planning Application - MERN Stack - Front End
 
 **Created By: Wen Ow, Kier Roman, and Dallas Van Wyk**
 
 **Date: April 10, 2025**
 
-#### INSERT 1 SENTANCE SUMMARY OF YOUR APPLICATION/GAME HERE
+#### Wekida is an online tool for event planning and sharing!
 
 <img src="path to your app screenshot" alt="Description of Screenshot"/>
 
@@ -20,9 +20,11 @@
 
 ## Trello Planning Board
 
-- Link to trello or planning board - ex: https://trello.com/b/2jeHdFcV/project-1-connect-4
+- [Trello project planning](https://trello.com/b/J1Lp3aTZ/unit-3-project-wen-kier-dallas)
 
 ## Figma High-Fidelity Mockups
+
+- [Figma wireframes](https://www.figma.com/design/Z3o4zvZOjmQoaEK2WQQifN/Wekida-Event-Planning?node-id=0-1&p=f&t=9FpXvNHFJr6CRaDl-0)
 
 ## Description
 
