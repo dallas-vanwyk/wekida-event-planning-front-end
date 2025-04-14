@@ -49,7 +49,7 @@ const SignUpForm = () => {
         <p>{message}</p>
         <form onSubmit={handleSubmit} className={styles.container}>
           <div>
-
+            <label htmlFor='firstName'>First name:</label>
             <input
               type="text"
               name="firstName"
@@ -60,6 +60,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
+            <label htmlFor='lastName'>Last name:</label>
             <input
               type="text"
               name="lastName"

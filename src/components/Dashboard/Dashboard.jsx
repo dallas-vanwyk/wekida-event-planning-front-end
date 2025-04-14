@@ -6,6 +6,8 @@ import { Link } from "react-router";
 const Dashboard = () => {
   const [events, setEvents] = useState([1]);
 
+  
+
   return (
     <div className="mx-8 mt-8">
       <div className="bg-[#E7F6FF] p-6 rounded-2xl">
