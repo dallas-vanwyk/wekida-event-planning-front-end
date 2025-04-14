@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/events`
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/events`;
 
 const index = async () => {
     try {
@@ -8,17 +8,17 @@ const index = async () => {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
             },
-        })
+        });
 
         if (!res.ok) {
-            throw new Error(`Server error: ${res.status}`)
-        }
+            throw new Error(`Server error: ${res.status}`);
+        };
 
-        return await res.json()
+        return await res.json();
     } catch (err) {
-        console.log(err)
-    }
-}
+        console.log(err);
+    };
+};
 
 const show = async (eventId) => {
     try {
@@ -29,39 +29,39 @@ const show = async (eventId) => {
         });
 
         if (!res.ok) {
-            throw new Error(`Server error: ${res.status}`)
-        }
+            throw new Error(`Server error: ${res.status}`);
+        };
 
         return await res.json();
     } catch (err) {
-        console.log(err)
-    }
+        console.log(err);
+    };
 };
 
 const create = async (eventData) => {
     try {
-      const res = await fetch(BASE_URL, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(eventData)
-      })
-  
-      if (!res.ok) {
-        throw new Error(`Server error: ${res.status}`)
-      }
-  
-      return await res.json()
+        const res = await fetch(BASE_URL, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(eventData)
+        });
+
+        if (!res.ok) {
+            throw new Error(`Server error: ${res.status}`);
+        };
+
+        return await res.json();
     } catch (err) {
-      console.log(err)
-      throw err
-    }
-  }
+        console.log(err);
+        throw err;
+    };
+};
 
 export {
     index,
     show,
     create
-}
+};

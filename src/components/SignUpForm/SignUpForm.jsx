@@ -5,9 +5,9 @@ import styles from './SignUpForm.module.css'
 import { UserContext } from "../../contexts/UserContext";
 
 const SignUpForm = () => {
-  const navigate = useNavigate()
-  const { setUser } = useContext(UserContext)
-  const [message, setMessage] = useState('')
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
+  const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,34 +15,36 @@ const SignUpForm = () => {
     email: '',
     password: '',
     confirmPassword: ''
-  })
+  });
 
-  const { firstName, lastName, username, password, email, confirmPassword } = formData
+  const { firstName, lastName, username, password, email, confirmPassword } = formData;
   const handleChange = (e) => {
     setMessage('')
     setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const newUser = await signUp(formData)
-      setUser(newUser)
-      navigate('/')
+      const newUser = await signUp(formData);
+      setUser(newUser);
+      navigate('/');
     } catch (err) {
-      setMessage(err.message)
-    }
-   
-  }
+      setMessage(err.message);
+    };
+
+  };
+
   const isFormInvalid = () => {
-    return !(firstName && lastName && username && email && password && password === confirmPassword)
-  }
+    return !(firstName && lastName && username && email && password && password === confirmPassword);
+  };
+
   return (
     <main className={styles.container}>
       <section>
 
-          <h1>Sign Up</h1>
-          <p>{message}</p>
+        <h1>Sign Up</h1>
+        <p>{message}</p>
         <form onSubmit={handleSubmit} className={styles.container}>
           <div>
 
@@ -106,12 +108,12 @@ const SignUpForm = () => {
           </div>
           <div>
             <button disabled={isFormInvalid()}>SignUp</button>
-            <button  type='button' onClick={() => navigate('/')} >Cancel</button>
+            <button type='button' onClick={() => navigate('/')} >Cancel</button>
           </div>
         </form>
       </section>
     </main>
-  )
+  );
 };
 
 export default SignUpForm;

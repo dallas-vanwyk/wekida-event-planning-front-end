@@ -1,10 +1,10 @@
-import { useState, useContext,useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import SignInForm from "./components/SignInForm/SignInForm";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import * as eventService from './services/eventService.js';
-import {UserContext} from './contexts/UserContext.jsx';
+import { UserContext } from './contexts/UserContext.jsx';
 
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar.jsx";
@@ -25,17 +25,17 @@ function App() {
 
   return (
     // <Router>
-      <div className="App">
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/sign-up" element={<SignUpForm />} />
-          <Route path="/sign-in" element={<SignInForm />} />
-          <Route path="/events/create" element={<CreateEvent />} />
-          <Route path="/events/preview" element={<PreviewEvent />} />
-          <Route path="/events/confirmation" element={<EventConfirmation />} />
-        </Routes>
-      </div>
+    <div className="App">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/sign-up" element={<SignUpForm />} />
+        <Route path="/sign-in" element={<SignInForm />} />
+        <Route path="/events/create" element={<CreateEvent />} />
+        <Route path="/events/preview" element={<PreviewEvent />} />
+        <Route path="/events/confirmation" element={<EventConfirmation />} />
+      </Routes>
+    </div>
     // </Router>
   );
 }
