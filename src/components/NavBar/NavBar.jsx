@@ -1,3 +1,5 @@
+// src/components/NavBar/NavBar.jsx
+
 import { Link } from "react-router";
 
 const NavBar = () => {

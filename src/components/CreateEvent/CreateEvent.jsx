@@ -1,3 +1,5 @@
+// src/components/CreateEvent/CreateEvent.jsx
+
 import React, { useState } from "react";
 import Attendees from "../AddAttendees/AddAttendees";
 import axios from "axios";
@@ -30,11 +32,12 @@ const CreateEvent = () => {
       console.log("Event created successfully:", response.data);
     } catch (error) {
       console.error("Error creating event:", error);
-    }
+    };
   };
 
   return (
     <div className="mx-8 mt-4">
+
       {/* First Section */}
       <div className="flex justify-between">
         <p className="font-bold text-2xl">Create an Event</p>
@@ -53,6 +56,7 @@ const CreateEvent = () => {
 
       {/* Form Section */}
       <div className="grid grid-cols-3 gap-4 my-8">
+
         <div className="">
           <p className="font-bold">General Info</p>
           <div className="mt-4">
@@ -69,6 +73,7 @@ const CreateEvent = () => {
             />
           </div>
         </div>
+
         <div className="">
           <p className="font-bold">Event Timing</p>
           <div className="grid grid-cols-2 mt-4">
@@ -100,6 +105,7 @@ const CreateEvent = () => {
             </div>
           </div>
         </div>
+
         <div className="">
           <p className="font-bold">Location</p>
           <div className="mt-4">
@@ -116,6 +122,7 @@ const CreateEvent = () => {
             />
           </div>
         </div>
+
         <div className="mt-4">
           <div>
             <label htmlFor="category" className="block">
@@ -138,6 +145,7 @@ const CreateEvent = () => {
             </select>
           </div>
         </div>
+
         <div>
           <div className="grid grid-cols-2 mt-4">
             <div>
@@ -168,6 +176,7 @@ const CreateEvent = () => {
             </div>
           </div>
         </div>
+
         <div className="mt-4">
           <div>
             <label htmlFor="hosted-by" className="block">
@@ -183,6 +192,7 @@ const CreateEvent = () => {
             />
           </div>
         </div>
+
         <div className="mt-4">
           <div>
             <label htmlFor="description" className="block">
@@ -197,6 +207,7 @@ const CreateEvent = () => {
             ></textarea>
           </div>
         </div>
+
       </div>
 
       {/* Recipients Button */}

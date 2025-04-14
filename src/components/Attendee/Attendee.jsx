@@ -1,4 +1,8 @@
+// src/components/Attendee/Attendee.jsx
+
 import { useState } from "react";
+
+// this component is used in AddAttendees, in CreateEvent
 
 const Attendee = ({ attendee, index, handleDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -6,6 +10,7 @@ const Attendee = ({ attendee, index, handleDelete }) => {
 
   return (
     <div className="flex justify-between items-center border border-gray-200 rounded-md my-2">
+
       {isEditing ? (
         <input
           type="text"
@@ -34,6 +39,7 @@ const Attendee = ({ attendee, index, handleDelete }) => {
           <i className="fa-solid fa-trash cursor-pointer text-xl" onClick={() => handleDelete(index)}></i>
         )}
       </div>
+
     </div>
   );
 };
