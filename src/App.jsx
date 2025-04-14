@@ -4,7 +4,7 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import SignInForm from "./components/SignInForm/SignInForm";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import * as eventService from './services/eventService.js'
-import { UserContext } from "./contexts/UserContext.jsx";
+import {UserContext} from './contexts/UserContext.jsx'
 
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar.jsx";
