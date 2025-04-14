@@ -2,6 +2,7 @@
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/events`;
 
+// function is called from the Dashboard
 const index = async () => {
     try {
         const res = await fetch(BASE_URL, {
@@ -22,6 +23,7 @@ const index = async () => {
     };
 };
 
+// function is called from Preview Event page
 const show = async (eventId) => {
     try {
 
@@ -40,6 +42,7 @@ const show = async (eventId) => {
     };
 };
 
+// function is called from Create Event page
 const create = async (eventData) => {
     try {
         const res = await fetch(BASE_URL, {
