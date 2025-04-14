@@ -36,10 +36,10 @@ const Dashboard = () => {
                 sed dolore nam ad adipisci sapiente.
               </p>
               <Link to="/" className="mt-8 block">
-                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+                See Event Overview <i className="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
               </Link>
               <Link to="/" className="text-gray-500 mt-6 block">
-                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+                Cancel Event <i className="fa-solid fa-trash text-lg ml-2"></i>
               </Link>
             </div>
             <div className="shadow-md hover:shadow-lg rounded-md p-4">
@@ -49,10 +49,10 @@ const Dashboard = () => {
                 sed dolore nam ad adipisci sapiente.
               </p>
               <Link to="/" className="mt-8 block">
-                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+                See Event Overview <i className="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
               </Link>
               <Link to="/" className="text-gray-500 mt-6 block">
-                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+                Cancel Event <i className="fa-solid fa-trash text-lg ml-2"></i>
               </Link>
             </div>
             <div className="shadow-md hover:shadow-lg rounded-md p-4">
@@ -62,10 +62,10 @@ const Dashboard = () => {
                 sed dolore nam ad adipisci sapiente.
               </p>
               <Link to="/" className="mt-8 block">
-                See Event Overview <i class="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+                See Event Overview <i className="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
               </Link>
               <Link to="/" className="text-gray-500 mt-6 block">
-                Cancel Event <i class="fa-solid fa-trash text-lg ml-2"></i>
+                Cancel Event <i className="fa-solid fa-trash text-lg ml-2"></i>
               </Link>
             </div>
           </div>
