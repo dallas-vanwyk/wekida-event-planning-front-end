@@ -2,71 +2,68 @@
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/events`;
 
-// function is called from the Dashboard
+// function is called from the Dashboard page
 const index = async () => {
-    try {
-        const res = await fetch(BASE_URL, {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-                'Content-Type': 'application/json'
-            },
-        });
+  try {
+    const res = await fetch(BASE_URL, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
+    });
 
-        if (!res.ok) {
-            throw new Error(`Server error: ${res.status}`);
-        };
+    if (!res.ok) {
+      throw new Error(`Server error: ${res.status}`);
+    }
 
-        return await res.json();
-    } catch (err) {
-        console.log(err);
-    };
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // function is called from Preview Event page
 const show = async (eventId) => {
-    try {
+  try {
+    console.log("eventId:", eventId);
 
-        const res = await fetch(`${BASE_URL}/${eventId}`, {
-            method: 'GET',
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-        });
+    const res = await fetch(`${BASE_URL}/${eventId}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    });
 
-        if (!res.ok) {
-            throw new Error(`Server error: ${res.status}`);
-        };
+    if (!res.ok) {
+      throw new Error(`Server error: ${res.status}`);
+    }
 
-        return await res.json();
-    } catch (err) {
-        console.log(err);
-    };
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // function is called from Create Event page
 const create = async (eventData) => {
-    try {
-        const res = await fetch(BASE_URL, {
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(eventData)
-        });
+  try {
+    const res = await fetch(BASE_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventData),
+    });
 
-        if (!res.ok) {
-            throw new Error(`Server error: ${res.status}`);
-        };
+    if (!res.ok) {
+      throw new Error(`Server error: ${res.status}`);
+    }
 
-        return await res.json();
-    } catch (err) {
-        console.log(err);
-        throw err;
-    };
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
 };
 
-export {
-    index,
-    show,
-    create
-};
+export { index, show, create };

@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import SignInForm from "./components/SignInForm/SignInForm";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
-import * as eventService from './services/eventService.js';
-import { UserContext } from './contexts/UserContext.jsx';
+import * as eventService from "./services/eventService.js";
+import { UserContext } from "./contexts/UserContext.jsx";
 
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar.jsx";
@@ -20,14 +20,12 @@ function App() {
   useEffect(() => {
     const fetchAllEvents = async () => {
       const eventsData = await eventService.index();
-      console.log('eventsData:', eventsData);
+      console.log("eventsData:", eventsData);
     };
     if (user) fetchAllEvents();
   }, []);
 
-
   if (user) {
-
     return (
       // <Router>
       <div className="App">
@@ -35,15 +33,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/events/create" element={<CreateEvent />} />
-          <Route path="/events/preview" element={<PreviewEvent />} />
+          <Route path="/events/preview/:id" element={<PreviewEvent />} />
           <Route path="/events/confirmation" element={<EventConfirmation />} />
         </Routes>
       </div>
       // </Router>
     );
-
   } else {
-
     return (
       // <Router>
       <div className="App">
@@ -56,8 +52,7 @@ function App() {
       </div>
       // </Router>
     );
-
-  };
-};
+  }
+}
 
 export default App;

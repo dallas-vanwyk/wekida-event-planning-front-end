@@ -3,10 +3,8 @@
 import { useState } from "react";
 import Attendee from "../Attendee/Attendee";
 
-// this component is used in CreateEvent
-
-const Attendees = () => {
-  const [attendees, setAttendees] = useState([]);
+// this component is used in Create Event page
+const AddAttendees = ({ attendees, setAttendees }) => {
   const [attendee, setAttendee] = useState("");
 
   const handleAddAttendee = () => {
@@ -27,7 +25,6 @@ const Attendees = () => {
 
   return (
     <>
-    
       <div className="my-8">
         <p className="font-bold">Attendees</p>
       </div>
@@ -65,9 +62,8 @@ const Attendees = () => {
           </div>
         </div>
       )}
-
     </>
   );
 };
 
-export default Attendees;
+export default AddAttendees;

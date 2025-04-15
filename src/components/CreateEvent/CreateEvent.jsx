@@ -1,9 +1,10 @@
 // src/components/CreateEvent/CreateEvent.jsx
 
-import React, { useState } from "react";
-import Attendees from "../AddAttendees/AddAttendees";
-import axios from "axios";
-
+import React, { useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext"; // Import UserContext to get user data
+import AddAttendees from "../AddAttendees/AddAttendees";
+import * as eventService from "../../services/eventService"; // Import eventService for API calls
+import { useNavigate } from "react-router";
 const initialFormState = {
   title: "",
   startDate: "",
@@ -17,28 +18,48 @@ const initialFormState = {
 };
 
 const CreateEvent = () => {
-  const [formData, setFormData] = useState(initialFormState);
+  const [formData, setFormData] = useState(initialFormState); // useState hook to store form data
+  const [attendees, setAttendees] = useState([]); // useState hook to store attendees list
+
+  const { user } = useContext(UserContext); // Assuming you have a UserContext to get user data
+  const userId = user ? user._id : null; // Get the user ID from context
+  console.log("User ID:", userId);
+
+  const navigate = useNavigate(); // useNavigate hook to programmatically navigate
 
   const handleClear = () => {
-    setFormData(initialFormState);
+    setFormData(initialFormState); // resets the form to initial empty values
   };
 
   const handleAddEvent = async () => {
-    console.log("Event Data:", formData);
-
     try {
-      const apiUrl = import.meta.env.VITE_BACK_END_SERVER_URL;
-      const response = await axios.post(`${apiUrl}/events`, formData);
-      console.log("Event created successfully:", response.data);
+      const newEvent = {
+        event_title: formData.title,
+        organizer: userId,
+        description: formData.description,
+        attendees: attendees,
+        category: formData.category,
+        start_date: formData.startDate,
+        start_time: formData.startTime,
+        end_date: formData.endDate,
+        end_time: formData.endTime,
+        location: formData.address,
+      };
+
+      const response = await eventService.create(newEvent); // Call the create function from eventService
+      setFormData(initialFormState); // Reset the form after creating the event
+      setAttendees([]); // Clear the attendees list after creating the event
+      const eventId = response._id; // Get the event ID from the response
+
+      navigate(`/events/preview/${eventId}`); // Navigate to the preview page with the event ID
     } catch (error) {
       console.error("Error creating event:", error);
-    };
+    }
   };
 
   return (
     <div className="mx-8 mt-4">
-
-      {/* First Section */}
+      {/* Page header and action buttons */}
       <div className="flex justify-between">
         <p className="font-bold text-2xl">Create an Event</p>
         <div>
@@ -51,14 +72,15 @@ const CreateEvent = () => {
         </div>
       </div>
 
-      {/* Banner Image Background */}
+      {/* Banner image background */}
       <div className="h-36 bg-[#E7F6FF] mt-8 flex justify-center items-center rounded-2xl">
         <i class="fa-solid fa-image"></i>
       </div>
 
-      {/* Form Section */}
+      {/* Form section divided into three columns */}
       <div className="grid grid-cols-3 gap-4 my-8">
-
+        
+        {/* Event title input */}
         <div className="">
           <p className="font-bold">General Info</p>
           <div className="mt-4">
@@ -76,6 +98,7 @@ const CreateEvent = () => {
           </div>
         </div>
 
+        {/* Start and end date time */}
         <div className="">
           <p className="font-bold">Event Timing</p>
           <div className="grid grid-cols-2 mt-4">
@@ -107,7 +130,6 @@ const CreateEvent = () => {
             </div>
           </div>
         </div>
-
         <div className="">
           <p className="font-bold">Location</p>
           <div className="mt-4">
@@ -138,12 +160,12 @@ const CreateEvent = () => {
               <option value="" selected disabled>
                 Select Category
               </option>
-              <option value="">Wedding</option>
-              <option value="">Baby Shower</option>
-              <option value="">Graduation Party</option>
-              <option value="">Conference</option>
-              <option value="">Arts & Entertainment</option>
-              <option value="">Sports</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Sports">Sports</option>
+              <option value="Graduation Party">Graduation Party</option>
+              <option value="Baby Shower">Baby Shower</option>
+              <option value="Conference">Conference</option>
+              <option value="Arts & Entertainment">Arts & Entertainment</option>
             </select>
           </div>
         </div>
@@ -209,12 +231,10 @@ const CreateEvent = () => {
             ></textarea>
           </div>
         </div>
-
       </div>
 
-      {/* Recipients Button */}
       <hr />
-      <Attendees />
+      <AddAttendees attendees={attendees} setAttendees={setAttendees} />
     </div>
   );
 };
