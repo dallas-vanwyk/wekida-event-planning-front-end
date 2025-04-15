@@ -34,7 +34,6 @@ Wekida is a collaborative event planning app designed to help organizers seamles
 
 - [Technologies Used](#technologiesused)
 - [Features](#features)
-- [Design](#design)
 - [Project Next Steps](#nextsteps)
 - [Deployed App](#deployment)
 - [About the Author](#author)
@@ -55,10 +54,6 @@ Wekida is a collaborative event planning app designed to help organizers seamles
 - Users Feature 1
 - Users Feature 2
 
-## <a name="design"></a>Design
-
-- Descrition of what inspired your design. Ex: Design elements implemented using HTML5 and CSS3.
-
 ## ERD Images & DB Structure
 
 - Embeded ERD Images
@@ -76,7 +71,8 @@ Wekida is a collaborative event planning app designed to help organizers seamles
 [Netlify](<[https://wonderful-brahmagupta-6a75d3.netlify.com](https://connect4pc.netlify.app/)>)
 
 - You can view the repository:
-  [Github.com](https://github.com/Gr8ness21/Connect-4)
+  [Github.com](add link here)
+
 - If unable to view please go live locally through VS Code
 
 ## <a name="author"></a>About The Authors
