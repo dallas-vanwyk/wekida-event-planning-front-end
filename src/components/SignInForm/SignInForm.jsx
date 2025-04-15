@@ -1,7 +1,7 @@
 // src/components/SignInForm/SignInForm.jsx
 
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { signIn } from "../../services/authService";
 import styles from './SignInForm.module.css';
 import { UserContext } from "../../contexts/UserContext";
@@ -39,7 +39,7 @@ const SignInForm = () => {
         {/* <p>{message}</p> */}
         <form autoComplete='off' onSubmit={handleSubmit} className={styles.container}>
           <div>
-            <label htmlFor='username'>Username:</label>
+            <label htmlFor='username'>Username</label>
             <input
               type='text'
               autoComplete='off'
@@ -52,7 +52,7 @@ const SignInForm = () => {
             />
           </div>
           <div>
-            <label htmlFor='password'>Password:</label>
+            <label htmlFor='password'>Password</label>
             <input
               type='password'
               autoComplete='off'
@@ -69,6 +69,11 @@ const SignInForm = () => {
             <button onClick={() => navigate('/')}>Cancel</button>
           </div>
         </form>
+        <p>
+          Don't have an account? <Link to="/sign-up" className=" ">
+            Sign Up <i className=" "></i>
+          </Link>
+        </p>
       </section>
     </main>
   );

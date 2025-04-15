@@ -1,7 +1,7 @@
 // src/components/SignUpForm/SignUpForm.jsx
 
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { signUp } from "../../services/authService";
 import styles from './SignUpForm.module.css';
 import { UserContext } from "../../contexts/UserContext";
@@ -49,7 +49,7 @@ const SignUpForm = () => {
         <p>{message}</p>
         <form onSubmit={handleSubmit} className={styles.container}>
           <div>
-            <label htmlFor='firstName'>First name:</label>
+            <label htmlFor='firstName'>First name</label>
             <input
               type="text"
               name="firstName"
@@ -60,7 +60,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-            <label htmlFor='lastName'>Last name:</label>
+            <label htmlFor='lastName'>Last name</label>
             <input
               type="text"
               name="lastName"
@@ -70,7 +70,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-            <label htmlFor='username'>Username:</label>
+            <label htmlFor='username'>Username</label>
             <input
               type="text"
               name="username"
@@ -81,7 +81,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
+            <label htmlFor='email'>Email</label>
             <input
               type="email"
               name="email"
@@ -92,8 +92,8 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-          <label htmlFor='password'>Password:</label>
-          <input
+            <label htmlFor='password'>Password</label>
+            <input
               type="password"
               name="password"
               placeholder="Password"
@@ -103,7 +103,7 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-          <input
+            <input
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
@@ -113,10 +113,15 @@ const SignUpForm = () => {
             />
           </div>
           <div>
-            <button disabled={isFormInvalid()}>SignUp</button>
+            <button disabled={isFormInvalid()}>Sign Up</button>
             <button type='button' onClick={() => navigate('/')} >Cancel</button>
           </div>
         </form>
+        <p>
+          Already have an account? <Link to="/sign-in" className=" ">
+            Sign In <i className=" "></i>
+          </Link>
+        </p>
       </section>
     </main>
   );
