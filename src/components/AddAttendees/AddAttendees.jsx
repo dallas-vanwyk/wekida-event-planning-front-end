@@ -1,5 +1,9 @@
+// src/components/AddAttendees/AddAttendees.jsx
+
 import { useState } from "react";
 import Attendee from "../Attendee/Attendee";
+
+// this component is used in CreateEvent
 
 const Attendees = () => {
   const [attendees, setAttendees] = useState([]);
@@ -23,9 +27,11 @@ const Attendees = () => {
 
   return (
     <>
+    
       <div className="my-8">
         <p className="font-bold">Attendees</p>
       </div>
+
       <div>
         <label className="block">Name of Attendee</label>
         <input
@@ -39,6 +45,7 @@ const Attendees = () => {
           Add Attendee
         </button>
       </div>
+
       {attendees.length > 0 && (
         <div className="my-4">
           <div className="flex justify-between items-center mb-4">
@@ -58,6 +65,7 @@ const Attendees = () => {
           </div>
         </div>
       )}
+
     </>
   );
 };

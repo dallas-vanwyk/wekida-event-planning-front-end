@@ -1,9 +1,13 @@
+// src/components/NavBar/NavBar.jsx
+
 import { Link } from "react-router";
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext.jsx';
 
 const NavBar = () => {
   const handleSignOut = () => {
-    // Logic to handle sign out
-    console.log("User signed out");
+    localStorage.removeItem('token')
+    setUser(null)
   };
 
   return (
