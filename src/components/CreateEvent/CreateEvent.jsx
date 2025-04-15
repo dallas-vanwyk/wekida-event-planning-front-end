@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Attendees from "../AddAttendees/AddAttendees";
-import axios from "axios";
+import axios from "axios"; // Import axios for API calls
 
 const initialFormState = {
   title: "",
@@ -15,10 +15,10 @@ const initialFormState = {
 };
 
 const CreateEvent = () => {
-  const [formData, setFormData] = useState(initialFormState);
+  const [formData, setFormData] = useState(initialFormState); // useState hook to store form data
 
   const handleClear = () => {
-    setFormData(initialFormState);
+    setFormData(initialFormState); // resets the form to initial empty values
   };
 
   const handleAddEvent = async () => {
@@ -26,7 +26,7 @@ const CreateEvent = () => {
 
     try {
       const apiUrl = import.meta.env.VITE_BACK_END_SERVER_URL;
-      const response = await axios.post(`${apiUrl}/events`, formData);
+      const response = await axios.post(`${apiUrl}/events`, formData); // POST request to create event
       console.log("Event created successfully:", response.data);
     } catch (error) {
       console.error("Error creating event:", error);
@@ -35,7 +35,7 @@ const CreateEvent = () => {
 
   return (
     <div className="mx-8 mt-4">
-      {/* First Section */}
+      {/* Page header and action buttons */}
       <div className="flex justify-between">
         <p className="font-bold text-2xl">Create an Event</p>
         <div>
@@ -46,13 +46,14 @@ const CreateEvent = () => {
         </div>
       </div>
 
-      {/* Banner Image Background */}
+      {/* Banner image background */}
       <div className="h-36 bg-[#E7F6FF] mt-8 flex justify-center items-center rounded-2xl">
         <i class="fa-solid fa-image"></i>
       </div>
 
-      {/* Form Section */}
+      {/* Form section divided into three columns */}
       <div className="grid grid-cols-3 gap-4 my-8">
+        {/* Event title input */}
         <div className="">
           <p className="font-bold">General Info</p>
           <div className="mt-4">
@@ -69,6 +70,8 @@ const CreateEvent = () => {
             />
           </div>
         </div>
+
+        {/* Start and end date time */}
         <div className="">
           <p className="font-bold">Event Timing</p>
           <div className="grid grid-cols-2 mt-4">
