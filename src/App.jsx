@@ -25,21 +25,39 @@ function App() {
     if (user) fetchAllEvents();
   }, []);
 
-  return (
-    // <Router>
-    <div className="App">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/sign-up" element={<SignUpForm />} />
-        <Route path="/sign-in" element={<SignInForm />} />
-        <Route path="/events/create" element={<CreateEvent />} />
-        <Route path="/events/preview" element={<PreviewEvent />} />
-        <Route path="/events/confirmation" element={<EventConfirmation />} />
-      </Routes>
-    </div>
-    // </Router>
-  );
+
+  if (user) {
+
+    return (
+      // <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/events/create" element={<CreateEvent />} />
+          <Route path="/events/preview" element={<PreviewEvent />} />
+          <Route path="/events/confirmation" element={<EventConfirmation />} />
+        </Routes>
+      </div>
+      // </Router>
+    );
+
+  } else {
+
+    return (
+      // <Router>
+      <div className="App">
+        {/* Put a title/header here????? */}
+        <Routes>
+          <Route path="/sign-up" element={<SignUpForm />} />
+          {/* <Route path="/sign-in" element={<SignInForm />} /> */}
+          <Route path="/*" element={<SignInForm />} />
+        </Routes>
+      </div>
+      // </Router>
+    );
+
+  };
 };
 
 export default App;
