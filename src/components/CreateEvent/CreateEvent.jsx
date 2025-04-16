@@ -155,11 +155,12 @@ const formAttendees = attendees.map((name) => ({ name }))
               Category
             </label>
             <select
+            value={formData.category}
               onChange={(e) => setFormData({ ...formData, category: e.target.value })}
               id="category"
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
             >
-              <option value={formData.category}  disabled>
+              <option value='' disabled hidden>
                 Select Category
               </option>
               <option value="Wedding">Wedding</option>
