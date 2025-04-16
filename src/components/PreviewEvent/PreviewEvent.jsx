@@ -61,7 +61,7 @@ const PreviewEvent = () => {
 
       {/* Category Image Background Section */}
       <div className="h-36 bg-[#E7F6FF] mt-8 flex justify-center items-center rounded-2xl">
-        <i class="fa-solid fa-image"></i>
+        <i className="fa-solid fa-image"></i>
       </div>
 
       {/* Form Section */}

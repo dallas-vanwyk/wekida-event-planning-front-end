@@ -90,7 +90,8 @@
       width: 100%;
     }
     .container section:first-child {
-      display: none;
+      /* display: none; */
+      width: 80vw;
     }
     .container form {
       min-width: 100%;

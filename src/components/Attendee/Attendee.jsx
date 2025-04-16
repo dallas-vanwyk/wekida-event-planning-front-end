@@ -29,7 +29,7 @@ const Attendee = ({ attendee, index, handleDelete }) => {
         {isEditing ? (
           <i className="fa-solid fa-floppy-disk mr-4 cursor-pointer text-xl" onClick={() => setIsEditing(false)}></i>
         ) : (
-          <i class="fa-solid fa-pencil mr-4 cursor-pointer text-xl" onClick={() => setIsEditing(true)}></i>
+          <i className="fa-solid fa-pencil mr-4 cursor-pointer text-xl" onClick={() => setIsEditing(true)}></i>
         )}
 
         {/* Delete onClick needs to be implemented in the back-end , I only made it delete from the state for now for testing purposes / user needs to be able to delete it permanently. */}

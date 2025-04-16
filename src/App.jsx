@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const fetchAllEvents = async () => {
       const eventsData = await eventService.index();
-      console.log("eventsData:", eventsData);
+      // console.log("eventsData:", eventsData);
     };
     if (user) fetchAllEvents();
   }, []);

@@ -15,7 +15,7 @@ const AttendeesList = ({ attendees }) => {
           <div className="my-2">
             {attendees.map((attendee, i) => (
               <div key={i} className="flex justify-between items-center mb-2">
-                <p>{attendee}</p>
+                <p>{attendee.name}</p>
               </div>
             ))}
           </div>
