@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .container p {
@@ -91,7 +92,8 @@ input:focus {
     }
 
     .container section:first-child {
-        display: none;
+        /* display: none; */
+        width: 80vw;
     }
 
     .container form {
