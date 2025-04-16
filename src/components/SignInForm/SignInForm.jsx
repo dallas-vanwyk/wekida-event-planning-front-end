@@ -35,8 +35,9 @@ const SignInForm = () => {
   return (
     <main className={styles.container}>
       <section>
-        <h1>Sign In</h1>
-        {/* <p>{message}</p> */}
+        <h1>Wekida</h1>
+        <h2>Sign In</h2>
+        <p>{message}</p>
         <form autoComplete='off' onSubmit={handleSubmit} className={styles.container}>
           <div>
             <label htmlFor='username'>Username</label>
@@ -69,11 +70,11 @@ const SignInForm = () => {
             <button onClick={() => navigate('/')}>Cancel</button>
           </div>
         </form>
-        <p>
+        <h3>
           Don't have an account? <Link to="/sign-up" className=" ">
             Sign Up <i className=" "></i>
           </Link>
-        </p>
+        </h3>
       </section>
     </main>
   );

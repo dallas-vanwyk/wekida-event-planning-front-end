@@ -74,7 +74,7 @@ const CreateEvent = () => {
 
       {/* Banner image background */}
       <div className="h-36 bg-[#E7F6FF] mt-8 flex justify-center items-center rounded-2xl">
-        <i class="fa-solid fa-image"></i>
+        <i className="fa-solid fa-image"></i>
       </div>
 
       {/* Form section divided into three columns */}
@@ -109,7 +109,7 @@ const CreateEvent = () => {
               <input
                 value={formData.startDate}
                 onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                type="text"
+                type="date"
                 id="event-start-date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
@@ -122,7 +122,7 @@ const CreateEvent = () => {
               <input
                 value={formData.endDate}
                 onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                type="text"
+                type="date"
                 id="event-end-date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
@@ -156,8 +156,9 @@ const CreateEvent = () => {
               onChange={(e) => setFormData({ ...formData, category: e.target.value })}
               id="category"
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
+              value="Select Category"
             >
-              <option value="" selected disabled>
+              <option value="" disabled>
                 Select Category
               </option>
               <option value="Wedding">Wedding</option>

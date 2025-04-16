@@ -44,8 +44,8 @@ const SignUpForm = () => {
   return (
     <main className={styles.container}>
       <section>
-
-        <h1>Sign Up</h1>
+        <h1>Wekida</h1>
+        <h2>Sign Up</h2>
         <p>{message}</p>
         <form onSubmit={handleSubmit} className={styles.container}>
           <div>
@@ -117,11 +117,11 @@ const SignUpForm = () => {
             <button type='button' onClick={() => navigate('/')} >Cancel</button>
           </div>
         </form>
-        <p>
+        <h3>
           Already have an account? <Link to="/sign-in" className=" ">
             Sign In <i className=" "></i>
           </Link>
-        </p>
+        </h3>
       </section>
     </main>
   );

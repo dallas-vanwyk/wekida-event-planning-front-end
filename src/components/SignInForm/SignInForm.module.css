@@ -59,7 +59,7 @@ button {
 }
 
 .container label {
-    font-weight: 600;
+    font-weight: 400;
     margin: 7px 0px 14px 0px;
 }
 
@@ -77,12 +77,30 @@ button {
     font-weight: 500;
     margin-top: 14px;
     text-align: center;
-    color: rgb(200, 200, 200);
+    color: #3758F9;
 }
 
 input:focus {
     outline: none;
     border: 1px solid #3758F9;
+}
+
+.container h1 {
+    color: #3758F9;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.container h2 {
+    text-align: left;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container h3 {
+    color: #637381;
+    margin-top: 20px;
 }
 
 @media only screen and (max-width: 912px) {
