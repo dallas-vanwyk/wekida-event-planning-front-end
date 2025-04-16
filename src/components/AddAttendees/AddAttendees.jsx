@@ -47,7 +47,6 @@ const AddAttendees = ({ attendees, setAttendees }) => {
         <div className="my-4">
           <div className="flex justify-between items-center mb-4">
             <p className="font-bold">List of Attendees</p>
-            {/* Clear All Attendees Button is missing the backend API call - it will need to be implemented */}
             <button
               onClick={() => handleClearAllAttendees()}
               className="bg-[#D9D9D9] py-2 px-4 rounded mr-4 cursor-pointer"
