@@ -1,10 +1,31 @@
 // src/components/Dashboard/Dashboard.jsx
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import * as eventService from "../../services/eventService"; // Import eventService for API calls
 
 const Dashboard = () => {
   const [events, setEvents] = useState([1]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const eventsData = await eventService.index();
+      console.log("eventsData:", eventsData);
+      setEvents(eventsData);
+    };
+    fetchEvents();
+  }, []);
+
+  // Function to handle event cancellation
+  const handleCancelEvent = async (eventId) => {
+    try {
+      await eventService.deleteEvent(eventId);
+      setEvents(events.filter((event) => event._id !== eventId));
+      console.log("Event canceled successfully");
+    } catch (error) {
+      console.error("Error canceling event:", error);
+    }
+  };
 
   return (
     <div className="mx-8 mt-8">
@@ -20,8 +41,7 @@ const Dashboard = () => {
         </Link>
       </div>
 
-      {/* (dallas note) turn the 'upcoming events' section into an array */}
-      {/* 'event card' is another React component to make */}
+      {/* Display events or a message if there are no events */}
       {events.length === 0 ? (
         <div className="border-l-[#3758F9] border-l-[4px] px-4 mt-12">
           <h2 className="font-bold text-xl">No Events</h2>
@@ -35,52 +55,18 @@ const Dashboard = () => {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
-
-            {/* event card 1 */}
-            <div className="shadow-md hover:shadow-lg rounded-md p-4">
-              <p className="font-bold text-xl">Baby Shower</p>
-              <p className="text-gray-700 mt-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
-                sed dolore nam ad adipisci sapiente.
-              </p>
-              <Link to="/" className="mt-8 block">
-                See Event Overview <i className="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
-              </Link>
-              <Link to="/" className="text-gray-500 mt-6 block">
-                Cancel Event <i className="fa-solid fa-trash text-lg ml-2"></i>
-              </Link>
-            </div>
-
-            {/* event card 2 */}
-            <div className="shadow-md hover:shadow-lg rounded-md p-4">
-              <p className="font-bold text-xl">Baby Shower</p>
-              <p className="text-gray-700 mt-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
-                sed dolore nam ad adipisci sapiente.
-              </p>
-              <Link to="/" className="mt-8 block">
-                See Event Overview <i className="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
-              </Link>
-              <Link to="/" className="text-gray-500 mt-6 block">
-                Cancel Event <i className="fa-solid fa-trash text-lg ml-2"></i>
-              </Link>
-            </div>
-
-            {/* event card 3 */}
-            <div className="shadow-md hover:shadow-lg rounded-md p-4">
-              <p className="font-bold text-xl">Baby Shower</p>
-              <p className="text-gray-700 mt-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae minima praesentium iste soluta
-                sed dolore nam ad adipisci sapiente.
-              </p>
-              <Link to="/" className="mt-8 block">
-                See Event Overview <i className="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
-              </Link>
-              <Link to="/" className="text-gray-500 mt-6 block">
-                Cancel Event <i className="fa-solid fa-trash text-lg ml-2"></i>
-              </Link>
-            </div>
-
+            {events.map((event, i) => (
+              <div className="shadow-md hover:shadow-lg rounded-md p-4">
+                <p className="font-bold text-xl">{event.event_title}</p>
+                <p className="text-gray-700 mt-4">{event.description} </p>
+                <Link to={`/events/preview/${event._id}`} className="mt-8 block">
+                  See Event Overview <i className="fa-solid fa-circle-arrow-right text-lg ml-2"></i>
+                </Link>
+                <button onClick={() => handleCancelEvent(event._id)} className="text-gray-500 mt-6 block">
+                  Cancel Event <i className="fa-solid fa-trash text-lg ml-2"></i>
+                </button>
+              </div>
+            ))}
           </div>
         </>
       )}

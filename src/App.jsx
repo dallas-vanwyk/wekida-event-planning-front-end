@@ -13,6 +13,7 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import CreateEvent from "./components/CreateEvent/CreateEvent.jsx";
 import PreviewEvent from "./components/PreviewEvent/PreviewEvent.jsx";
 import EventConfirmation from "./components/EventConfirmation/EventConfirmation.jsx";
+import EditEvent from "./components/EditEvent/EditEvent.jsx";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -33,8 +34,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/events/create" element={<CreateEvent />} />
+          <Route path="/events/edit/:id" element={<EditEvent />} />
           <Route path="/events/preview/:id" element={<PreviewEvent />} />
-          <Route path="/events/confirmation" element={<EventConfirmation />} />
+          <Route path="/events/confirmation/:id" element={<EventConfirmation />} />
         </Routes>
       </div>
       // </Router>

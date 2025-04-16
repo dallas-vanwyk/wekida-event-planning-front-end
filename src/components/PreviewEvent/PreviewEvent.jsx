@@ -55,7 +55,9 @@ const PreviewEvent = () => {
           <Link to={`/events/edit/${id}`} className="bg-[#D9D9D9] py-2 px-4 rounded mr-4">
             Edit Event
           </Link>
-          <button className="bg-[#3758F9] text-white py-2 px-4 rounded">Send Invitation</button>
+          <Link to={`/events/confirmation/${id}`} className="bg-[#3758F9] text-white py-2 px-4 rounded">
+            Send Invitation
+          </Link>
         </div>
       </div>
 
