@@ -3,7 +3,6 @@
 import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router";
 import { signIn } from "../../services/authService";
-import styles from './SignInForm.module.css';
 import { UserContext } from "../../contexts/UserContext";
 
 const SignInForm = () => {
@@ -33,14 +32,12 @@ const SignInForm = () => {
   };
 
   return (
-    // <main className={styles.container}>
     <main className="flex justify-items-center max-w-150 mx-auto p-8">
 
       <section className="w-full">
         <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-10" >Wekida</h1>
         <h2 className="font-bold text-xl my-5" >Sign In</h2>
         <p>{message}</p>
-        {/* <form autoComplete='off' onSubmit={handleSubmit} className={styles.container}> */}
         <form onSubmit={handleSubmit} className="grid">
 
           <div>
