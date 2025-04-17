@@ -18,7 +18,7 @@ const Attendee = ({ attendee, index, handleDelete }) => {
           placeholder="Enter attendee name e.g. John Doe"
           value={attendeeName}
           onChange={(e) => setAttendeeName(e.target.value)}
-          onBlur={() => setIsEditing(false)}
+          // onBlur={() => setIsEditing(false)}
         />
       ) : (
         <p className="my-2 px-3 py-2">{attendee}</p>

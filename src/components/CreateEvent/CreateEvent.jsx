@@ -104,6 +104,7 @@ const formAttendees = attendees.map((name) => ({ name }))
         <div className="">
           <p className="font-bold">Event Timing</p>
           <div className="grid grid-cols-2 mt-4">
+
             <div>
               <label htmlFor="event-start-date" className="block">
                 Start Date
@@ -111,12 +112,13 @@ const formAttendees = attendees.map((name) => ({ name }))
               <input
                 value={formData.startDate}
                 onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                type="date"
+                type="datetime-local"
                 id="event-start-date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
               />
             </div>
+
             <div>
               <label htmlFor="event-end-date" className="block">
                 End Date
@@ -124,16 +126,18 @@ const formAttendees = attendees.map((name) => ({ name }))
               <input
                 value={formData.endDate}
                 onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                type="date"
+                type="datetime-local"
                 id="event-end-date"
                 className="my-2 border border-gray-200 px-3 py-2 rounded-md"
                 placeholder="MM/DD/YYYY"
               />
             </div>
+
           </div>
         </div>
         <div className="">
           <p className="font-bold">Location</p>
+          
           <div className="mt-4">
             <label htmlFor="address" className="block">
               Address
@@ -147,6 +151,7 @@ const formAttendees = attendees.map((name) => ({ name }))
               placeholder="Address"
             />
           </div>
+
         </div>
 
         <div className="mt-4">
@@ -173,7 +178,7 @@ const formAttendees = attendees.map((name) => ({ name }))
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <div className="grid grid-cols-2 mt-4">
             <div>
               <label htmlFor="event-start-time" className="block">
@@ -202,7 +207,7 @@ const formAttendees = attendees.map((name) => ({ name }))
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="mt-4">
           <div>
