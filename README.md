@@ -114,7 +114,7 @@ _Navigation & UI_
 
 **Lead Back-End Developer:** Kier Roman
 
-- LinkedIn: (insert link here)
+- LinkedIn: https://www.linkedin.com/in/kier-roman-245844220/
 
 **Lead Scrum Project Manager:** Dallas Van Wyk
 
