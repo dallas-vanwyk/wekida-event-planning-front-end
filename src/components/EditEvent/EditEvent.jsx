@@ -54,7 +54,6 @@ const EditEvent = () => {
 
   const { user } = useContext(UserContext); // Assuming you have a UserContext to get user data
   const userId = user ? user._id : null; // Get the user ID from context
-  // console.log("User ID:", userId);
 
   const navigate = useNavigate(); // useNavigate hook to programmatically navigate
 
@@ -83,8 +82,6 @@ const EditEvent = () => {
       //Call the update function from eventService
       console.log("response:", response);
 
-      // setFormData(initialFormState); // Reset the form after creating the event
-      // setAttendees([]); // Clear the attendees list after creating the event
       const eventId = response._id; // Get the event ID from the response
 
       navigate(`/events/preview/${eventId}`); // Navigate to the preview page with the event ID
@@ -205,37 +202,6 @@ const EditEvent = () => {
             </select>
           </div>
         </div>
-
-        {/* <div>
-          <div className="grid grid-cols-2 mt-4">
-            <div>
-              <label htmlFor="event-start-time" className="block">
-                Start Time
-              </label>
-              <input
-                value={formData.startTime}
-                onChange={(e) => setFormData({ ...formData, startTime: e.target.value })}
-                type="time"
-                id="event-start-time"
-                className="my-2 border border-gray-200 px-3 py-2 rounded-md"
-                placeholder="HH:MM AM/PM"
-              />
-            </div>
-            <div>
-              <label htmlFor="event-end-time" className="block">
-                End Time
-              </label>
-              <input
-                value={formData.endTime}
-                onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
-                type="time"
-                id="event-end-time"
-                className="my-2 border border-gray-200 px-3 py-2 rounded-md"
-                placeholder="HH:MM AM/PM"
-              />
-            </div>
-          </div>
-        </div> */}
 
         <div className="mt-4">
           <div>

@@ -1,13 +1,13 @@
 // src/components/NavBar/NavBar.jsx
 
 import { Link } from "react-router";
-import { useContext } from 'react';
-import { UserContext } from '../../contexts/UserContext.jsx';
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext.jsx";
 
 const NavBar = () => {
   const handleSignOut = () => {
-    localStorage.removeItem('token')
-    setUser(null)
+    localStorage.removeItem("token");
+    setUser(null);
   };
 
   return (

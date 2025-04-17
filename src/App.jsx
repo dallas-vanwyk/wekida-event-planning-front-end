@@ -45,7 +45,6 @@ function App() {
     return (
       // <Router>
       <div className="App">
-        {/* Put a title/header here????? */}
         <Routes>
           <Route path="/sign-up" element={<SignUpForm />} />
           {/* <Route path="/sign-in" element={<SignInForm />} /> */}

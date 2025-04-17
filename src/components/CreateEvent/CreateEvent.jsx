@@ -23,7 +23,6 @@ const CreateEvent = () => {
 
   const { user } = useContext(UserContext); // Assuming you have a UserContext to get user data
   const userId = user ? user._id : null; // Get the user ID from context
-  // console.log("User ID:", userId);
 
   const navigate = useNavigate(); // useNavigate hook to programmatically navigate
 
@@ -33,7 +32,7 @@ const CreateEvent = () => {
 
   const handleAddEvent = async () => {
     try {
-const formAttendees = attendees.map((name) => ({ name }))
+      const formAttendees = attendees.map((name) => ({ name }));
 
       const newEvent = {
         event_title: formData.title,
@@ -81,7 +80,6 @@ const formAttendees = attendees.map((name) => ({ name }))
 
       {/* Form section divided into three columns */}
       <div className="grid grid-cols-3 gap-4 my-8">
-        
         {/* Event title input */}
         <div className="">
           <p className="font-bold">General Info</p>
@@ -104,7 +102,6 @@ const formAttendees = attendees.map((name) => ({ name }))
         <div className="">
           <p className="font-bold">Event Timing</p>
           <div className="grid grid-cols-2 mt-4">
-
             <div>
               <label htmlFor="event-start-date" className="block">
                 Start Date
@@ -132,12 +129,11 @@ const formAttendees = attendees.map((name) => ({ name }))
                 placeholder="MM/DD/YYYY"
               />
             </div>
-
           </div>
         </div>
         <div className="">
           <p className="font-bold">Location</p>
-          
+
           <div className="mt-4">
             <label htmlFor="address" className="block">
               Address
@@ -151,7 +147,6 @@ const formAttendees = attendees.map((name) => ({ name }))
               placeholder="Address"
             />
           </div>
-
         </div>
 
         <div className="mt-4">
@@ -160,12 +155,12 @@ const formAttendees = attendees.map((name) => ({ name }))
               Category
             </label>
             <select
-            value={formData.category}
+              value={formData.category}
               onChange={(e) => setFormData({ ...formData, category: e.target.value })}
               id="category"
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-75"
             >
-              <option value='' disabled hidden>
+              <option value="" disabled hidden>
                 Select Category
               </option>
               <option value="Wedding">Wedding</option>
@@ -177,37 +172,6 @@ const formAttendees = attendees.map((name) => ({ name }))
             </select>
           </div>
         </div>
-
-        {/* <div>
-          <div className="grid grid-cols-2 mt-4">
-            <div>
-              <label htmlFor="event-start-time" className="block">
-                Start Time
-              </label>
-              <input
-                value={formData.startTime}
-                onChange={(e) => setFormData({ ...formData, startTime: e.target.value })}
-                type="time"
-                id="event-start-time"
-                className="my-2 border border-gray-200 px-3 py-2 rounded-md"
-                placeholder="HH:MM AM/PM"
-              />
-            </div>
-            <div>
-              <label htmlFor="event-end-time" className="block">
-                End Time
-              </label>
-              <input
-                value={formData.endTime}
-                onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
-                type="time"
-                id="event-end-time"
-                className="my-2 border border-gray-200 px-3 py-2 rounded-md"
-                placeholder="HH:MM AM/PM"
-              />
-            </div>
-          </div>
-        </div> */}
 
         <div className="mt-4">
           <div>
