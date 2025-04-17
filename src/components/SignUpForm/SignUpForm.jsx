@@ -42,14 +42,23 @@ const SignUpForm = () => {
   };
 
   return (
-    <main className={styles.container}>
-      <section>
+    // <main className={styles.container}>
+    <main className="flex justify-items-center max-w-150 mx-auto p-8">
 
-        <h1>Sign Up</h1>
+      {/* <section> */}
+      <section className="w-full">
+
+        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-10" >Wekida</h1>
+        <h2 className="font-bold text-xl my-5" >Sign Up</h2>
         <p>{message}</p>
-        <form onSubmit={handleSubmit} className={styles.container}>
+        {/* <form onSubmit={handleSubmit} className={styles.container}> */}
+        <form onSubmit={handleSubmit} className="grid">
+
           <div>
-            <label htmlFor='firstName'>First name</label>
+            <label
+              htmlFor='firstName'
+              className="block"
+            >First name</label>
             <input
               type="text"
               name="firstName"
@@ -57,20 +66,30 @@ const SignUpForm = () => {
               value={formData.firstName}
               onChange={handleChange}
               required
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
-            <label htmlFor='lastName'>Last name</label>
+            <label
+              htmlFor='lastName'
+              className="block"
+            >Last name</label>
             <input
               type="text"
               name="lastName"
               placeholder="Last Name"
               value={formData.lastName}
               onChange={handleChange}
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
-            <label htmlFor='username'>Username</label>
+            <label
+              htmlFor='username'
+              className="block"
+            >Username</label>
             <input
               type="text"
               name="username"
@@ -78,10 +97,15 @@ const SignUpForm = () => {
               value={formData.username}
               onChange={handleChange}
               required
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
-            <label htmlFor='email'>Email</label>
+            <label
+              htmlFor='email'
+              className="block"
+            >Email</label>
             <input
               type="email"
               name="email"
@@ -89,10 +113,15 @@ const SignUpForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
-            <label htmlFor='password'>Password</label>
+            <label
+              htmlFor='password'
+              className="block"
+            >Password</label>
             <input
               type="password"
               name="password"
@@ -100,8 +129,10 @@ const SignUpForm = () => {
               value={formData.password}
               onChange={handleChange}
               required
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
             <input
               type="password"
@@ -110,18 +141,35 @@ const SignUpForm = () => {
               value={formData.confirmPassword}
               onChange={handleChange}
               required
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
-            <button disabled={isFormInvalid()}>Sign Up</button>
-            <button type='button' onClick={() => navigate('/')} >Cancel</button>
+            
+            <button
+              disabled={isFormInvalid()}
+              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
+            >Sign Up</button>
+
+            <button
+              type='button'
+              onClick={() => navigate('/')}
+              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
+            >Cancel</button>
+
           </div>
         </form>
-        <p>
-          Already have an account? <Link to="/sign-in" className=" ">
-            Sign In <i className=" "></i>
+
+        <p className="text-[#637381]">
+          Already have an account? <Link
+            to="/sign-in"
+            className="text-[#3758F9]"
+          >
+            Sign In
           </Link>
         </p>
+
       </section>
     </main>
   );

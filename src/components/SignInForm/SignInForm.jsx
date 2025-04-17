@@ -33,13 +33,21 @@ const SignInForm = () => {
   };
 
   return (
-    <main className={styles.container}>
-      <section>
-        <h1>Sign In</h1>
+    // <main className={styles.container}>
+    <main className="flex justify-items-center max-w-150 mx-auto p-8">
+
+      <section className="w-full">
+        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-10" >Wekida</h1>
+        <h2 className="font-bold text-xl my-5" >Sign In</h2>
         <p>{message}</p>
-        <form autoComplete='off' onSubmit={handleSubmit} className={styles.container}>
+        {/* <form autoComplete='off' onSubmit={handleSubmit} className={styles.container}> */}
+        <form onSubmit={handleSubmit} className="grid">
+
           <div>
-            <label htmlFor='username'>Username</label>
+            <label
+              htmlFor='username'
+              className="block"
+            >Username</label>
             <input
               type='text'
               autoComplete='off'
@@ -49,10 +57,15 @@ const SignInForm = () => {
               placeholder='Username'
               onChange={handleChange}
               required
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
-            <label htmlFor='password'>Password</label>
+            <label
+              htmlFor='password'
+              className="block"
+            >Password</label>
             <input
               type='password'
               autoComplete='off'
@@ -62,18 +75,31 @@ const SignInForm = () => {
               name='password'
               onChange={handleChange}
               required
+              className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
             />
           </div>
+
           <div>
-            <button>Sign In</button>
-            <button onClick={() => navigate('/')}>Cancel</button>
+            <button
+              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
+            >Sign In</button>
+            <button
+              onClick={() => navigate('/')}
+              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
+            >Cancel</button>
           </div>
+
         </form>
-        <p>
-          Don't have an account? <Link to="/sign-up" className=" ">
-            Sign Up <i className=" "></i>
+        
+        <p className="text-[#637381]">
+          Don't have an account? <Link
+            to="/sign-up"
+            className="text-[#3758F9]"
+          >
+            Sign Up
           </Link>
         </p>
+        
       </section>
     </main>
   );
