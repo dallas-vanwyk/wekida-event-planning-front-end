@@ -16,6 +16,8 @@
 
 ![Snapshot of the Dashboard]
 
+![Snapshot of the Create Event]
+
 ## Deployed Link
 
 - (Insert deployed link here)
@@ -81,9 +83,9 @@ _Navigation & UI_
 - As a user, I want to use a simple top navigation bar, so that I can easily move between the dashboard and sign out.
 - As a user, I want the UI to be visually appealing and intuitive, so that my experience feels smooth and professional.
 
-## ERD Images & DB Structure
+## ERD Images
 
-- Embeded ERD Images
+- ERD Link: https://docs.google.com/spreadsheets/d/1nG5Hkb_aoqrclyjnxXckyk-B8U_aTyrld5aO-5AiWSI/edit?usp=sharing
 
 ## <a name="nextsteps"></a>Project Next Steps
 
@@ -114,7 +116,7 @@ _Navigation & UI_
 
 **Lead Back-End Developer:** Kier Roman
 
-- LinkedIn: (insert link here)
+- LinkedIn: https://www.linkedin.com/in/kier-roman-245844220/
 
 **Lead Scrum Project Manager:** Dallas Van Wyk
 

@@ -1,15 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 @import "tailwindcss";
 
-/*
-.quicksand-<uniquifier> {
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-*/
-
 .background-banner {
   background-image: url("./assets/images/babyshowerbg.jpg");
 }

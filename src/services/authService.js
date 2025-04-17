@@ -6,38 +6,38 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/auth`;
 const signUp = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-up`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     });
 
     if (!res.ok) {
       throw new Error(`Server error: ${res.status}`);
-    };
+    }
 
     const data = await res.json();
 
     if (data.err) {
       throw new Error(data.err);
-    };
+    }
 
     if (data.token) {
-      localStorage.setItem('token', data.token);
-      return JSON.parse(atob(data.token.split('.')[1])).payload;
-    };
-    throw new Error('Invalid response from server');
+      localStorage.setItem("token", data.token);
+      return JSON.parse(atob(data.token.split(".")[1])).payload;
+    }
+    throw new Error("Invalid response from server");
   } catch (err) {
     console.log(err);
     throw new Error(err);
-  };
+  }
 };
 
 // function is called from Sign In page
 const signIn = async (formData) => {
   try {
     const res = await fetch(`${BASE_URL}/sign-in`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
 
@@ -45,21 +45,18 @@ const signIn = async (formData) => {
 
     if (data.err) {
       throw new Error(data.err);
-    };
+    }
 
     if (data.token) {
-      localStorage.setItem('token', data.token);
-      return JSON.parse(atob(data.token.split('.')[1])).payload;
-    };
+      localStorage.setItem("token", data.token);
+      return JSON.parse(atob(data.token.split(".")[1])).payload;
+    }
 
-    throw new Error('Invalid response from server');
+    throw new Error("Invalid response from server");
   } catch (err) {
     console.log(err);
     throw new Error(err);
-  };
+  }
 };
 
-export {
-  signUp,
-  signIn,
-};
+export { signUp, signIn };

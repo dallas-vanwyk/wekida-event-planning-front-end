@@ -8,19 +8,19 @@ import { UserContext } from "../../contexts/UserContext";
 const SignUpForm = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const { firstName, lastName, username, password, email, confirmPassword } = formData;
   const handleChange = (e) => {
-    setMessage('');
+    setMessage("");
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -29,11 +29,10 @@ const SignUpForm = () => {
     try {
       const newUser = await signUp(formData);
       setUser(newUser);
-      navigate('/');
+      navigate("/");
     } catch (err) {
       setMessage(err.message);
-    };
-
+    }
   };
 
   const isFormInvalid = () => {
@@ -42,19 +41,15 @@ const SignUpForm = () => {
 
   return (
     <main className="flex justify-items-center max-w-150 mx-auto p-8">
-
       <section className="w-full">
-
-        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-10" >Wekida</h1>
-        <h2 className="font-bold text-xl my-5" >Sign Up</h2>
+        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-10">Wekida</h1>
+        <h2 className="font-bold text-xl my-5">Sign Up</h2>
         <p>{message}</p>
         <form onSubmit={handleSubmit} className="grid">
-
           <div>
-            <label
-              htmlFor='firstName'
-              className="block"
-            >First name</label>
+            <label htmlFor="firstName" className="block">
+              First name
+            </label>
             <input
               type="text"
               name="firstName"
@@ -67,10 +62,9 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            <label
-              htmlFor='lastName'
-              className="block"
-            >Last name</label>
+            <label htmlFor="lastName" className="block">
+              Last name
+            </label>
             <input
               type="text"
               name="lastName"
@@ -82,10 +76,9 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            <label
-              htmlFor='username'
-              className="block"
-            >Username</label>
+            <label htmlFor="username" className="block">
+              Username
+            </label>
             <input
               type="text"
               name="username"
@@ -98,10 +91,9 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            <label
-              htmlFor='email'
-              className="block"
-            >Email</label>
+            <label htmlFor="email" className="block">
+              Email
+            </label>
             <input
               type="email"
               name="email"
@@ -114,10 +106,9 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            <label
-              htmlFor='password'
-              className="block"
-            >Password</label>
+            <label htmlFor="password" className="block">
+              Password
+            </label>
             <input
               type="password"
               name="password"
@@ -142,30 +133,26 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            
-            <button
-              disabled={isFormInvalid()}
-              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
-            >Sign Up</button>
+            <button disabled={isFormInvalid()} className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5">
+              Sign Up
+            </button>
 
             <button
-              type='button'
-              onClick={() => navigate('/')}
+              type="button"
+              onClick={() => navigate("/")}
               className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
-            >Cancel</button>
-
+            >
+              Cancel
+            </button>
           </div>
         </form>
 
         <p className="text-[#637381]">
-          Already have an account? <Link
-            to="/sign-in"
-            className="text-[#3758F9]"
-          >
+          Already have an account?{" "}
+          <Link to="/sign-in" className="text-[#3758F9]">
             Sign In
           </Link>
         </p>
-
       </section>
     </main>
   );
