@@ -101,20 +101,7 @@ const PreviewEvent = () => {
             <p>{event.category}</p>
           </div>
         </div>
-        <div>
-          <div className="grid grid-cols-2 mt-4">
-            <div>
-              <p htmlFor="event-start-time" className="block">
-                Start Time
-              </p>
-              <p>1:00 PM</p>
-            </div>
-            <div>
-              <p>End Time</p>
-              <p>4:00 PM</p>
-            </div>
-          </div>
-        </div>
+
         <div className="mt-4">
           <div>
             <p>Hosted By</p>
