@@ -37,6 +37,7 @@ function App() {
           <Route path="/events/edit/:id" element={<EditEvent />} />
           <Route path="/events/preview/:id" element={<PreviewEvent />} />
           <Route path="/events/confirmation/:id" element={<EventConfirmation />} />
+          <Route path="/*" element={<Dashboard />} />
         </Routes>
       </div>
       // </Router>
