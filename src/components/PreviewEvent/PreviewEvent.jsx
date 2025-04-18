@@ -46,6 +46,15 @@ const PreviewEvent = () => {
     fetchEvent(id); // Call the fetch function
   }, [id]); // Dependency array to run effect only when ID changes
 
+  const formatDateTime = (isoString) => {
+  if (!isoString) return "";
+  const date = new Date(isoString);
+  return date.toLocaleString("en-US", {
+    dateStyle: "medium", // or "long", "short"
+    timeStyle: "short",  // shows e.g. 2:00 PM
+  });
+};
+
   return (
     <div className="mx-8 mt-4">
       {/* First Section */}
@@ -80,11 +89,11 @@ const PreviewEvent = () => {
           <div className="grid grid-cols-2 mt-4">
             <div>
               <p>Start Date</p>
-              <p>{event.start_date}</p>
+              <p>{formatDateTime(event.start_date)}</p>
             </div>
             <div>
               <p>End Date</p>
-              <p>{event.end_date}</p>
+              <p>{formatDateTime(event.end_date)}</p>
             </div>
           </div>
         </div>

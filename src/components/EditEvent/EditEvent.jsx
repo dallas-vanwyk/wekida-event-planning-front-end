@@ -30,8 +30,19 @@ const EditEvent = () => {
         console.log("eventData:", eventData);
 
         // Transitioning the date from 2025-08-01T00:00:00.000Z to 2025-08-01
-        const formattedStartDate = new Date(eventData.start_date).toISOString().split("T")[0];
-        const formattedEndDate = new Date(eventData.end_date).toISOString().split("T")[0];
+        // const formattedStartDate = new Date(eventData.start_date).toISOString().split("T")[0];
+        // const formattedEndDate = new Date(eventData.end_date).toISOString().split("T")[0];
+
+        const formatDateTimeLocal = (dateString) => {
+          const date = new Date(dateString);
+          const offset = date.getTimezoneOffset();
+          const localDate = new Date(date.getTime() - offset * 60 * 1000);
+            return localDate.toISOString().slice(0, 16); // YYYY-MM-DDTHH:MM
+};
+
+const formattedStartDate = formatDateTimeLocal(eventData.start_date);
+const formattedEndDate = formatDateTimeLocal(eventData.end_date);
+
         setFormData({
           title: eventData.event_title,
           startDate: formattedStartDate,
