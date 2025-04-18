@@ -19,6 +19,12 @@ const AddAttendees = ({ attendees, setAttendees }) => {
     setAttendees(newAttendees);
   };
 
+ const handleEdit = (index, newName) => {
+  const updated = [...attendees];
+  updated[index] = newName;
+  setAttendees(updated);
+};
+
   const handleClearAllAttendees = () => {
     setAttendees([]);
   };
@@ -56,7 +62,7 @@ const AddAttendees = ({ attendees, setAttendees }) => {
           </div>
           <div className="my-2">
             {attendees.map((attendee, i) => (
-              <Attendee key={i} attendee={attendee} index={i} handleDelete={handleDelete} />
+              <Attendee key={i} attendee={attendee} index={i} handleDelete={handleDelete} handleEdit={handleEdit} />
             ))}
           </div>
         </div>

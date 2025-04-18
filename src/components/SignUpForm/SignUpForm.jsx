@@ -40,9 +40,10 @@ const SignUpForm = () => {
   };
 
   return (
+    <div className='bg-gray-800 size-[50rem] mx-auto rounded-xl'>
     <main className="flex justify-items-center max-w-150 mx-auto p-8">
       <section className="w-full">
-        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-10">Wekida</h1>
+        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-5">Wekida</h1>
         <h2 className="font-bold text-xl my-5">Sign Up</h2>
         <p>{message}</p>
         <form onSubmit={handleSubmit} className="grid">
@@ -102,7 +103,7 @@ const SignUpForm = () => {
               onChange={handleChange}
               required
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
-            />
+              />
           </div>
 
           <div>
@@ -133,14 +134,14 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            <button disabled={isFormInvalid()} className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5">
+            <button disabled={isFormInvalid()} className="bg-[#3758F9] text-white py-2 rounded mr-3 block w-full my-5">
               Sign Up
             </button>
 
             <button
               type="button"
               onClick={() => navigate("/")}
-              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
+              className="bg-[#3758F9] text-white py-2 rounded mr-3 block w-full my-5"
             >
               Cancel
             </button>
@@ -155,6 +156,7 @@ const SignUpForm = () => {
         </p>
       </section>
     </main>
+              </div>
   );
 };
 
