@@ -51,7 +51,6 @@ Wekida is a collaborative event planning app designed to help organizers seamles
 - Node JS
 - Tailwind CSS
 - Font Awesome Icons
-- HTML5
 - CSS
 
 ## <a name="features"></a>Features / User Stories
