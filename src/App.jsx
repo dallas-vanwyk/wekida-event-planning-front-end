@@ -45,7 +45,8 @@ function App() {
   } else {
     return (
       // <Router>
-      <div className="App">
+      <div className="App bg-[#DFE4EA] h-screen" >
+        <div className="h-10"></div>
         <Routes>
           <Route path="/sign-up" element={<SignUpForm />} />
           {/* <Route path="/sign-in" element={<SignInForm />} /> */}

@@ -40,13 +40,13 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className='bg-gray-800 size-[50rem] mx-auto rounded-xl'>
-    <main className="flex justify-items-center max-w-150 mx-auto p-8">
+    <main className="flex bg-white justify-items-center max-w-140 mx-auto px-20 pt-5 pb-30 mx-auto rounded-xl shadow-md hover:shadow-lg">
       <section className="w-full">
-        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-5">Wekida</h1>
-        <h2 className="font-bold text-xl my-5">Sign Up</h2>
+        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-6">Wekida</h1>
+        <h2 className="font-bold text-xl my-7">Sign Up</h2>
         <p>{message}</p>
         <form onSubmit={handleSubmit} className="grid">
+
           <div>
             <label htmlFor="firstName" className="block">
               First name
@@ -103,7 +103,7 @@ const SignUpForm = () => {
               onChange={handleChange}
               required
               className="my-2 border border-gray-200 px-3 py-2 rounded-md w-full"
-              />
+            />
           </div>
 
           <div>
@@ -137,19 +137,12 @@ const SignUpForm = () => {
             <button
               type="submit"
               disabled={isFormInvalid()}
-              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
+              className="bg-[#3758F9] text-white py-2 rounded block w-full my-8"
             >
               Sign Up
             </button>
-
-            {/* <button
-              type="button"
-              onClick={() => navigate("/")}
-              className="bg-[#3758F9] text-white py-2 rounded mr-3 block w-full my-5"
-            >
-              Cancel
-            </button> */}
           </div>
+
         </form>
 
         <p className="text-[#637381]">
@@ -160,7 +153,6 @@ const SignUpForm = () => {
         </p>
       </section>
     </main>
-              </div>
   );
 };
 
