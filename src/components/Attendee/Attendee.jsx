@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // this component is used in AddAttendees, in CreateEvent
-const Attendee = ({ attendee, index, handleDelete }) => {
+const Attendee = ({ attendee, index, handleDelete, handleEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [attendeeName, setAttendeeName] = useState(attendee);
 
@@ -23,9 +23,9 @@ const Attendee = ({ attendee, index, handleDelete }) => {
 
       <div className="mx-4">
         {isEditing ? (
-          <i className="fa-solid fa-floppy-disk mr-4 cursor-pointer text-xl" onClick={() => setIsEditing(false)}></i>
+          <i className="fa-solid fa-floppy-disk mr-4 cursor-pointer text-xl" onClick={() => { handleEdit(index, attendeeName), setIsEditing(false)}}></i>
         ) : (
-          <i className="fa-solid fa-pencil mr-4 cursor-pointer text-xl" onClick={() => setIsEditing(true)}></i>
+          <i className="fa-solid fa-pencil mr-4 cursor-pointer text-xl" onClick={() => { setAttendeeName(attendee), setIsEditing(true)}}></i>
         )}
 
         {isEditing ? (

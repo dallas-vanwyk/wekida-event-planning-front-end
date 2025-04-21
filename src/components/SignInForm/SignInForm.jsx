@@ -33,9 +33,10 @@ const SignInForm = () => {
   };
 
   return (
+    <div className='bg-gray-800 size-[50rem] mx-auto rounded-xl'>
     <main className="flex justify-items-center max-w-150 mx-auto p-8">
       <section className="w-full">
-        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-10">Wekida</h1>
+        <h1 className="text-[#3758F9] text-4xl font-bold justify-self-center my-5">Wekida</h1>
         <h2 className="font-bold text-xl my-5">Sign In</h2>
         <p>{message}</p>
         <form onSubmit={handleSubmit} className="grid">
@@ -91,6 +92,7 @@ const SignInForm = () => {
         </p>
       </section>
     </main>
+</div>
   );
 };
 
