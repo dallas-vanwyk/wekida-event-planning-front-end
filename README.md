@@ -6,9 +6,24 @@
 
 #### Wekida is an online tool for event planning and sharing!
 
-<img src="path to your app screenshot" alt="Description of Screenshot"/>
+## Table of Contents
+
+- [Description](#description)
+- [Technologies Used](#technologiesused)
+- [Technologies Used](#technologiesused)
+- [Technologies Used](#technologiesused)
+- [Features](#features)
+- [Project Next Steps](#nextsteps)
+- [Deployed App](#deployment)
+- [About the Authors](#author)
+
+## <a name="description"></a>Description
+
+Wekida is a collaborative event planning app designed to help organizers seamlessly create, manage, and share events with ease. Built with simplicity and efficiency in mind, Wekida empowers users to stay on top of event details, coordinate attendees, and keep everything in one place—whether it’s for work, celebration, or community. Named after the developers who brought it to life, Wekida reflects the spirit of teamwork and smart planning.
 
 **Images of the Application**
+
+<img src="path to your app screenshot" alt="Description of Screenshot"/>
 
 ![Snapshot of the Sign Up page]
 
@@ -18,29 +33,13 @@
 
 ![Snapshot of the Create Event]
 
-## Deployed Link
-
-- (Insert deployed link here)
-
-## Trello Planning Board
+## <a name="trello"></a>Trello Planning Board
 
 - [Trello project planning](https://trello.com/b/J1Lp3aTZ/unit-3-project-wen-kier-dallas)
 
-## Figma High-Fidelity Mockups
+## <a name="figma"></a>Figma High-Fidelity Mockups
 
 - [Figma wireframes](https://www.figma.com/design/Z3o4zvZOjmQoaEK2WQQifN/Wekida-Event-Planning?node-id=0-1&p=f&t=9FpXvNHFJr6CRaDl-0)
-
-## Description
-
-Wekida is a collaborative event planning app designed to help organizers seamlessly create, manage, and share events with ease. Built with simplicity and efficiency in mind, Wekida empowers users to stay on top of event details, coordinate attendees, and keep everything in one place—whether it’s for work, celebration, or community. Named after the developers who brought it to life, Wekida reflects the spirit of teamwork and smart planning.
-
-## Table of Contents
-
-- [Technologies Used](#technologiesused)
-- [Features](#features)
-- [Project Next Steps](#nextsteps)
-- [Deployed App](#deployment)
-- [About the Authors](#author)
 
 ## <a name="technologiesused"></a>Technologies Used
 
@@ -52,7 +51,7 @@ Wekida is a collaborative event planning app designed to help organizers seamles
 - Font Awesome Icons
 - CSS
 
-## Features / User Stories
+## <a name="userstories"></a>Features / User Stories
 
 _Authentication_
 
@@ -98,6 +97,10 @@ _Navigation & UI_
 - Allow event co-hosts or multiple organizers to edit the same event.
 - Implement roles and permissions (e.g., viewer, editor, owner).
 
+## <a name="deployed"></a>Deployed Link
+
+- [Deployed app on Netlify](https://wekida.netlify.app/)
+
 ## <a name="deployment"></a>Deployed Link
 
 [Netlify](<[https://wonderful-brahmagupta-6a75d3.netlify.com](https://connect4pc.netlify.app/)>)
@@ -112,15 +115,18 @@ _Navigation & UI_
 
 **Lead Front-End Developer and Designer:** Wen Ow
 
-- LinkedIn: https://www.linkedin.com/in/wenow/
+- [LinkedIn](https://www.linkedin.com/in/wenow/)
+- [GitHub](https://github.com/Wen-Ow)
 
 **Lead Back-End Developer:** Kier Roman
 
-- LinkedIn: https://www.linkedin.com/in/kier-roman-245844220/
+- [LinkedIn](https://www.linkedin.com/in/kier-roman-245844220/)
+- [GitHub](https://github.com/KierRoman)
 
 **Lead Scrum Project Manager:** Dallas Van Wyk
 
-- LinkedIn: https://www.linkedin.com/in/dallas-van-wyk-5a330676/
+- [LinkedIn](https://www.linkedin.com/in/dallas-van-wyk-5a330676/)
+- [GitHub](https://github.com/dallas-vanwyk/)
 
 ## Front-End Credits / Attributions:
 
@@ -132,7 +138,7 @@ _Navigation & UI_
 
 - https://fonts.google.com/specimen/Quicksand
 
-**Photos:** (these are for the banner)
+**Banner Photos:**
 
 - https://pixabay.com/illustrations/sky-clouds-stars-starry-cloudy-5606097/
 - https://pixabay.com/illustrations/concert-music-festival-scenario-8770776/
