@@ -25,15 +25,15 @@ Wekida is a collaborative event planning app designed to help organizers seamles
 
 **Images of the Application**
 
-<img src="path to your app screenshot" alt="Description of Screenshot"/>
+<img src="https://i.imgur.com/dKXcewG.png" alt="Create Event page"/>
 
-![Snapshot of the Sign Up page]
+<img src="https://i.imgur.com/zBiwXDB.png" alt="Dashboard"/>
 
-![Snapshot of the Sign In page]
+<img src="https://i.imgur.com/YKnDKyX.png" alt="Preview Event page"/>
 
-![Snapshot of the Dashboard]
+<img src="https://i.imgur.com/gLoA4S0.png" alt="Sign In page"/>
 
-![Snapshot of the Create Event]
+<img src="https://i.imgur.com/AfPhhLb.png" alt="Sign Up page"/>
 
 ## <a name="trello"></a>Trello Planning Board
 
@@ -99,14 +99,14 @@ _Navigation & UI_
 - Allow event co-hosts or multiple organizers to edit the same event.
 - Implement roles and permissions (e.g., viewer, editor, owner).
 
-## <a name="deployment"></a>Deployed Link
+## <a name="deployment"></a>Deployed Links
 
 - [Deployed app on Netlify](https://wekida.netlify.app/)
-[Netlify](<[https://wonderful-brahmagupta-6a75d3.netlify.com](https://connect4pc.netlify.app/)>)
+- [Deployed back end on Heroku](https://wekida-events-back-end-eacaf4a2ba91.herokuapp.com/)
 
-- You can view the repository:
-  [Github.com](add front-end link here)
-  (add back-end link here)
+- You can view the repositories:
+  [GitHub: front end](https://github.com/dallas-vanwyk/wekida-event-planning-front-end)
+  [GitHub: back end](https://github.com/dallas-vanwyk/wekida-event-planning-back-end)
 
 - If unable to view please go live locally through VS Code
 
