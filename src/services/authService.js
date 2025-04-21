@@ -1,6 +1,7 @@
 // src/services/authService.js
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/auth`;
+// const BASE_URL = `https://wekida-events-back-end-eacaf4a2ba91.herokuapp.com/auth`;
 
 // function is called from Sign In page
 const signUp = async (formData) => {

@@ -1,6 +1,7 @@
 // src/services/userService.js
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/users`;
+// const BASE_URL = `https://wekida-events-back-end-eacaf4a2ba91.herokuapp.com/users`;
 
 const index = async () => {
   try {

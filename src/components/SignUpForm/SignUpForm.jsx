@@ -134,17 +134,21 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            <button disabled={isFormInvalid()} className="bg-[#3758F9] text-white py-2 rounded mr-3 block w-full my-5">
+            <button
+              type="submit"
+              disabled={isFormInvalid()}
+              className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
+            >
               Sign Up
             </button>
 
-            <button
+            {/* <button
               type="button"
               onClick={() => navigate("/")}
               className="bg-[#3758F9] text-white py-2 rounded mr-3 block w-full my-5"
             >
               Cancel
-            </button>
+            </button> */}
           </div>
         </form>
 
