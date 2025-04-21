@@ -23,9 +23,9 @@ const Attendee = ({ attendee, index, handleDelete, handleEdit }) => {
 
       <div className="mx-4">
         {isEditing ? (
-          <i className="fa-solid fa-floppy-disk mr-4 cursor-pointer text-xl" onClick={() => { handleEdit(index, attendeeName), setIsEditing(false)}}></i>
+          <i className="fa-solid fa-floppy-disk mr-4 cursor-pointer text-xl" onClick={() => { handleEdit(index, attendeeName), setIsEditing(false) }}></i>
         ) : (
-          <i className="fa-solid fa-pencil mr-4 cursor-pointer text-xl" onClick={() => { setAttendeeName(attendee), setIsEditing(true)}}></i>
+          <i className="fa-solid fa-pencil mr-4 cursor-pointer text-xl" onClick={() => { setAttendeeName(attendee), setIsEditing(true) }}></i>
         )}
 
         {isEditing ? (

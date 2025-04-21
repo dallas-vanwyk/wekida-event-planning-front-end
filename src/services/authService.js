@@ -1,7 +1,6 @@
 // src/services/authService.js
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/auth`;
-// const BASE_URL = `https://wekida-events-back-end-eacaf4a2ba91.herokuapp.com/auth`;
 
 // function is called from Sign In page
 const signUp = async (formData) => {
@@ -14,23 +13,24 @@ const signUp = async (formData) => {
 
     if (!res.ok) {
       throw new Error(`Server error: ${res.status}`);
-    }
+    };
 
     const data = await res.json();
 
     if (data.err) {
       throw new Error(data.err);
-    }
+    };
 
     if (data.token) {
       localStorage.setItem("token", data.token);
       return JSON.parse(atob(data.token.split(".")[1])).payload;
-    }
+    };
+
     throw new Error("Invalid response from server");
   } catch (err) {
     console.log(err);
     throw new Error(err);
-  }
+  };
 };
 
 // function is called from Sign In page
@@ -46,18 +46,18 @@ const signIn = async (formData) => {
 
     if (data.err) {
       throw new Error(data.err);
-    }
+    };
 
     if (data.token) {
       localStorage.setItem("token", data.token);
       return JSON.parse(atob(data.token.split(".")[1])).payload;
-    }
+    };
 
     throw new Error("Invalid response from server");
   } catch (err) {
     console.log(err);
     throw new Error(err);
-  }
+  };
 };
 
 export { signUp, signIn };

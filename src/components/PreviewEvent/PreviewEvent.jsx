@@ -47,13 +47,13 @@ const PreviewEvent = () => {
   }, [id]); // Dependency array to run effect only when ID changes
 
   const formatDateTime = (isoString) => {
-  if (!isoString) return "";
-  const date = new Date(isoString);
-  return date.toLocaleString("en-US", {
-    dateStyle: "medium", // or "long", "short"
-    timeStyle: "short",  // shows e.g. 2:00 PM
-  });
-};
+    if (!isoString) return "";
+    const date = new Date(isoString);
+    return date.toLocaleString("en-US", {
+      dateStyle: "medium", // or "long", "short"
+      timeStyle: "short",  // shows e.g. 2:00 PM
+    });
+  };
 
   return (
     <div className="mx-8 mt-4">

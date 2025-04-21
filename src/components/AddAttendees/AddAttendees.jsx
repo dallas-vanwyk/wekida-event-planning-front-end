@@ -19,11 +19,11 @@ const AddAttendees = ({ attendees, setAttendees }) => {
     setAttendees(newAttendees);
   };
 
- const handleEdit = (index, newName) => {
-  const updated = [...attendees];
-  updated[index] = newName;
-  setAttendees(updated);
-};
+  const handleEdit = (index, newName) => {
+    const updated = [...attendees];
+    updated[index] = newName;
+    setAttendees(updated);
+  };
 
   const handleClearAllAttendees = () => {
     setAttendees([]);

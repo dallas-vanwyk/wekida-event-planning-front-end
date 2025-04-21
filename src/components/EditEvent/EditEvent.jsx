@@ -29,19 +29,15 @@ const EditEvent = () => {
         const eventData = await eventService.show(id); // Fetch event data using the event ID
         console.log("eventData:", eventData);
 
-        // Transitioning the date from 2025-08-01T00:00:00.000Z to 2025-08-01
-        // const formattedStartDate = new Date(eventData.start_date).toISOString().split("T")[0];
-        // const formattedEndDate = new Date(eventData.end_date).toISOString().split("T")[0];
-
         const formatDateTimeLocal = (dateString) => {
           const date = new Date(dateString);
           const offset = date.getTimezoneOffset();
           const localDate = new Date(date.getTime() - offset * 60 * 1000);
-            return localDate.toISOString().slice(0, 16); // YYYY-MM-DDTHH:MM
-};
+          return localDate.toISOString().slice(0, 16); // YYYY-MM-DDTHH:MM
+        };
 
-const formattedStartDate = formatDateTimeLocal(eventData.start_date);
-const formattedEndDate = formatDateTimeLocal(eventData.end_date);
+        const formattedStartDate = formatDateTimeLocal(eventData.start_date);
+        const formattedEndDate = formatDateTimeLocal(eventData.end_date);
 
         setFormData({
           title: eventData.event_title,
@@ -57,7 +53,7 @@ const formattedEndDate = formatDateTimeLocal(eventData.end_date);
         setAttendees(eventData.attendees.map((attendee) => attendee.name)); // Set the attendees list
       } catch (err) {
         console.error(err); // Handle error if fetching fails
-      }
+      };
     };
 
     fetchEvent(id); // Call the fetch function
@@ -98,7 +94,7 @@ const formattedEndDate = formatDateTimeLocal(eventData.end_date);
       navigate(`/events/preview/${eventId}`); // Navigate to the preview page with the event ID
     } catch (error) {
       console.error("Error creating event:", error);
-    }
+    };
   };
 
   return (

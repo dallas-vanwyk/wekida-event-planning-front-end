@@ -21,7 +21,6 @@ function App() {
   useEffect(() => {
     const fetchAllEvents = async () => {
       const eventsData = await eventService.index();
-      // console.log("eventsData:", eventsData);
     };
     if (user) fetchAllEvents();
   }, []);
@@ -44,18 +43,17 @@ function App() {
     );
   } else {
     return (
-      // <Router>
       <div className="App bg-[#DFE4EA] h-screen" >
         <div className="h-10"></div>
         <Routes>
           <Route path="/sign-up" element={<SignUpForm />} />
-          {/* <Route path="/sign-in" element={<SignInForm />} /> */}
+          <Route path="/sign-in" element={<SignInForm />} />
+          {/* leaving a separate path for a future landing page */}
           <Route path="/*" element={<SignInForm />} />
         </Routes>
       </div>
-      // </Router>
     );
-  }
-}
+  };
+};
 
 export default App;
