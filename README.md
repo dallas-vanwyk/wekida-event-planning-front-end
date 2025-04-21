@@ -10,9 +10,11 @@
 
 - [Description](#description)
 - [Technologies Used](#technologiesused)
-- [Technologies Used](#technologiesused)
+- [Entity-Relationship Diagram](#erd)
 - [Technologies Used](#technologiesused)
 - [Features](#features)
+- [Trello Project Planning](#trello)
+- [Figma High-Fidelity Mockups](#figma)
 - [Project Next Steps](#nextsteps)
 - [Deployed App](#deployment)
 - [About the Authors](#author)
@@ -51,7 +53,7 @@ Wekida is a collaborative event planning app designed to help organizers seamles
 - Font Awesome Icons
 - CSS
 
-## <a name="userstories"></a>Features / User Stories
+## <a name="features"></a>Features / User Stories
 
 _Authentication_
 
@@ -82,9 +84,9 @@ _Navigation & UI_
 - As a user, I want to use a simple top navigation bar, so that I can easily move between the dashboard and sign out.
 - As a user, I want the UI to be visually appealing and intuitive, so that my experience feels smooth and professional.
 
-## ERD Images
+## <a name="erd"></a>ERD Images
 
-- ERD Link: https://docs.google.com/spreadsheets/d/1nG5Hkb_aoqrclyjnxXckyk-B8U_aTyrld5aO-5AiWSI/edit?usp=sharing
+- [Entity-Relationship Diagram (Google Sheets)](https://docs.google.com/spreadsheets/d/1nG5Hkb_aoqrclyjnxXckyk-B8U_aTyrld5aO-5AiWSI/edit?usp=sharing)
 
 ## <a name="nextsteps"></a>Project Next Steps
 
@@ -97,12 +99,9 @@ _Navigation & UI_
 - Allow event co-hosts or multiple organizers to edit the same event.
 - Implement roles and permissions (e.g., viewer, editor, owner).
 
-## <a name="deployed"></a>Deployed Link
-
-- [Deployed app on Netlify](https://wekida.netlify.app/)
-
 ## <a name="deployment"></a>Deployed Link
 
+- [Deployed app on Netlify](https://wekida.netlify.app/)
 [Netlify](<[https://wonderful-brahmagupta-6a75d3.netlify.com](https://connect4pc.netlify.app/)>)
 
 - You can view the repository:

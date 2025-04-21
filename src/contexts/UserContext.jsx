@@ -15,6 +15,6 @@ function UserProvider({ children }) {
   const [user, setUser] = useState(getUserFromToken);
   const value = { user, setUser };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
-}
+};
 
 export { UserProvider, UserContext };

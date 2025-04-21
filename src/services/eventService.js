@@ -1,7 +1,6 @@
 // src/services/eventService.js
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/events`;
-// const BASE_URL = `https://wekida-events-back-end-eacaf4a2ba91.herokuapp.com/events`;
 
 // function is called from the Dashboard page
 const index = async () => {
@@ -16,12 +15,12 @@ const index = async () => {
 
     if (!res.ok) {
       throw new Error(`Server error: ${res.status}`);
-    }
+    };
 
     return await res.json();
   } catch (err) {
     console.log(err);
-  }
+  };
 };
 
 // function is called from Preview Event page
@@ -36,12 +35,12 @@ const show = async (eventId) => {
 
     if (!res.ok) {
       throw new Error(`Server error: ${res.status}`);
-    }
+    };
 
     return await res.json();
   } catch (err) {
     console.log(err);
-  }
+  };
 };
 
 // function is called from Create Event page
@@ -58,13 +57,13 @@ const create = async (eventData) => {
 
     if (!res.ok) {
       throw new Error(`Server error: ${res.status}`);
-    }
+    };
 
     return await res.json();
   } catch (err) {
     console.log(err);
     throw err;
-  }
+  };
 };
 
 // function is called from Edit Event page
@@ -81,13 +80,13 @@ const update = async (eventId, eventData) => {
 
     if (!res.ok) {
       throw new Error(`Server error: ${res.status}`);
-    }
+    };
 
     return await res.json();
   } catch (err) {
     console.log(err);
     throw err;
-  }
+  };
 };
 
 const deleteEvent = async (eventId) => {
@@ -102,13 +101,13 @@ const deleteEvent = async (eventId) => {
 
     if (!res.ok) {
       throw new Error(`Server error: ${res.status}`);
-    }
+    };
 
     return await res.json();
   } catch (err) {
     console.log(err);
     throw err;
-  }
+  };
 };
 
 export { index, show, create, update, deleteEvent };
