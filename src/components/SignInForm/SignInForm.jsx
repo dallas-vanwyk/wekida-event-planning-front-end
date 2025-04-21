@@ -20,6 +20,7 @@ const SignInForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("handleSubmit triggered");
     e.preventDefault();
     try {
       const signedInUser = await signIn(formData);
@@ -73,12 +74,11 @@ const SignInForm = () => {
           </div>
 
           <div>
-            <button className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5">Sign In</button>
             <button
-              onClick={() => navigate("/")}
+              type="submit"
               className="bg-[#3758F9] text-white py-2 rounded ml-4 block w-full my-5"
             >
-              Cancel
+              Sign In
             </button>
           </div>
         </form>
